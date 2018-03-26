@@ -1,29 +1,18 @@
 # cmark-gfm-swift
 
-[![CI Status](http://img.shields.io/travis/Ryan Nystrom/cmark-gfm-swift.svg?style=flat)](https://travis-ci.org/Ryan Nystrom/cmark-gfm-swift)
-[![Version](https://img.shields.io/cocoapods/v/cmark-gfm-swift.svg?style=flat)](http://cocoapods.org/pods/cmark-gfm-swift)
-[![License](https://img.shields.io/cocoapods/l/cmark-gfm-swift.svg?style=flat)](http://cocoapods.org/pods/cmark-gfm-swift)
-[![Platform](https://img.shields.io/cocoapods/p/cmark-gfm-swift.svg?style=flat)](http://cocoapods.org/pods/cmark-gfm-swift)
+⚠️ WIP ⚠
 
-## Example
+A Swift wrapper of cmark with GitHub Flavored Markdown extensions.
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+### Resources
 
-## Requirements
+- [GFM spec](https://github.github.com/gfm/) with [blog post](https://githubengineering.com/a-formal-spec-for-github-markdown/)
+- [CommonMark extensions](https://github.com/commonmark/CommonMark/wiki/Deployed-Extensions)
+- [Using cmark gfm extensions](https://medium.com/@krisgbaker/using-cmark-gfm-extensions-aad759894a89)
 
-## Installation
+### Acknowledgements
 
-cmark-gfm-swift is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod 'cmark-gfm-swift'
-```
-
-## Author
-
-Ryan Nystrom, rnystrom@instagram.com
-
-## License
-
-cmark-gfm-swift is available under the MIT license. See the LICENSE file for more info.
+- [cmark](https://github.com/commonmark/cmark)
+- [GitHub cmark fork](https://github.com/github/cmark)
+- [commonmark-swift](https://github.com/chriseidhof/commonmark-swift)
+- [libcmark_gfm](https://github.com/KristopherGBaker/libcmark_gfm)
