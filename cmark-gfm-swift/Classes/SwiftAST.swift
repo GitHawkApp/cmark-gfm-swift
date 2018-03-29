@@ -29,6 +29,7 @@ public enum Inline {
     case image(children: [Inline], title: String?, url: String?)
     case strikethrough(children: [Inline])
     case mention(login: String)
+    case checkbox(checked: Bool, originalRange: NSRange)
 }
 
 enum InlineType: String {
@@ -44,6 +45,7 @@ enum InlineType: String {
     case text
     case strikethrough
     case mention
+    case checkbox
 }
 
 extension Inline: ExpressibleByStringLiteral {
@@ -123,6 +125,8 @@ extension Inline {
             self = .strikethrough(children: inlineChildren())
         case .mention:
             self = .mention(login: node.login ?? "")
+        case .checkbox:
+            self = .checkbox(checked: node.checked, originalRange: node.checkedRange)
         }
     }
 }

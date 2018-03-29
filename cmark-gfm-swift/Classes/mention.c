@@ -20,26 +20,27 @@ static cmark_node *match(cmark_syntax_extension *self, cmark_parser *parser,
     cmark_chunk *chunk = cmark_inline_parser_get_chunk(inline_parser);
     uint8_t *data = chunk->data;
     size_t size = chunk->len;
-    int at = 1;
-    int len = at;
+    int start = cmark_inline_parser_get_offset(inline_parser);
+    int at = start + 1;
+    int end = at;
 
-    while (len < size 
-           && (cmark_isalnum(data[len]) || data[len] == '-')) {
-        len++;
+    while (end < size
+           && (cmark_isalnum(data[end]) || data[end] == '-')) {
+        end++;
     }
 
-    if (len == at) {
+    if (end == at) {
         return NULL;
     }
 
-    cmark_inline_parser_set_offset(inline_parser, len);
     cmark_node *node = cmark_node_new_with_mem(CMARK_NODE_MENTION, parser->mem);
 
     cmark_chunk *mention_chunk;
     node->as.opaque = mention_chunk = parser->mem->calloc(1, sizeof(cmark_chunk));
     mention_chunk->data = data + at;
-    mention_chunk->len = len - at;
+    mention_chunk->len = end - at;
 
+    cmark_inline_parser_set_offset(inline_parser, start + (end - start));
     cmark_node_set_syntax_extension(node, self);
 
     return node;

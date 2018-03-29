@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "checkbox.h"
 #import "cmark-gfm-swift.h"
 #import "gfm-extensions.h"
 #import "mention.h"

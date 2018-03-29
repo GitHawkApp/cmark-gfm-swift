@@ -69,6 +69,10 @@ public class Node: CustomStringConvertible {
             cmark_parser_attach_syntax_extension(parser, ext)
         }
 
+        if let ext = cmark_find_syntax_extension("checkbox") {
+            cmark_parser_attach_syntax_extension(parser, ext)
+        }
+
         cmark_parser_feed(parser, markdown, markdown.utf8.count)
         guard let node = cmark_parser_finish(parser) else { return nil }
         self.node = node
@@ -114,8 +118,18 @@ public class Node: CustomStringConvertible {
     }
 
     var login: String? {
-        get { return String(unsafeCString: cmark_node_get_mention_login(node)) }
-        set { }
+        return String(unsafeCString: cmark_node_get_mention_login(node))
+    }
+
+    var checked: Bool {
+        return cmark_node_get_checkbox_checked(node) == 1
+    }
+
+    var checkedRange: NSRange {
+        return NSRange(
+            location: Int(cmark_node_get_checkbox_location(node)),
+            length: Int(cmark_node_get_checkbox_length(node))
+        )
     }
     
     var fenceInfo: String? {
