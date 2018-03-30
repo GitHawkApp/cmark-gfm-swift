@@ -95,11 +95,11 @@ enum BlockType: String {
 }
 
 extension Inline {
-    init(_ node: Node) {
+    init?(_ node: Node) {
         guard let type = InlineType(rawValue: node.typeString) else {
-            fatalError("Unrecognized node: \(node.typeString)")
+            return nil
         }
-        let inlineChildren = { node.children.map(Inline.init) }
+        let inlineChildren = { node.children.flatMap(Inline.init) }
         switch type {
         case .text:
             self = .text(text: node.literal!)
@@ -132,12 +132,12 @@ extension Inline {
 }
 
 extension Block {
-    init(_ node: Node) {
+    init?(_ node: Node) {
         guard let type = BlockType(rawValue: node.typeString) else {
-            fatalError("Unrecognized node: \(node.typeString)")
+            return nil
         }
-        let parseInlineChildren = { node.children.map(Inline.init) }
-        let parseBlockChildren = { node.children.map(Block.init) }
+        let parseInlineChildren = { node.children.flatMap(Inline.init) }
+        let parseBlockChildren = { node.children.flatMap(Block.init) }
         switch type {
         case .paragraph:
             self = .paragraph(text: parseInlineChildren())
@@ -145,7 +145,7 @@ extension Block {
             self = .blockQuote(items: parseBlockChildren())
         case .list:
             let type: ListType = node.listType == CMARK_BULLET_LIST ? .unordered : .ordered
-            self = .list(items: node.children.map { $0.listItem }, type: type)
+            self = .list(items: node.children.flatMap { $0.listItem }, type: type)
         case .code_block:
             self = .codeBlock(text: node.literal!, language: node.fenceInfo)
         case .html_block:
@@ -169,12 +169,12 @@ extension Block {
 }
 
 extension Node {
-    var listItem: [Block] {
+    var listItem: [Block]? {
         switch type {
         case CMARK_NODE_ITEM:
-            return children.map(Block.init)
+            return children.flatMap(Block.init)
         default:
-            fatalError("Unrecognized node \(typeString), expected a list item")
+            return nil
         }
     }
 
@@ -189,7 +189,7 @@ extension Node {
     }
 }
 
-extension Node {
+//extension Node {
 //    convenience init(type: cmark_node_type, literal: String) {
 //        self.init(type: type)
 //        self.literal = literal
@@ -200,7 +200,7 @@ extension Node {
 //    convenience init(type: cmark_node_type, elements: [Inline]) {
 //        self.init(type: type, children: elements.map(Node.init))
 //    }
-}
+//}
 
 //extension Node {
 //    public convenience init(blocks: [Block]) {
@@ -212,12 +212,12 @@ extension Node {
     /// The abstract syntax tree representation of a Markdown document.
     /// - returns: an array of block-level elements.
     public var elements: [Block] {
-        return children.map(Block.init)
+        return children.flatMap(Block.init)
     }
 }
 
 func tableOfContents(document: String) -> [Block] {
-    let blocks = Node(markdown: document)?.children.map(Block.init) ?? []
+    let blocks = Node(markdown: document)?.children.flatMap(Block.init) ?? []
     return blocks.filter {
         switch $0 {
         case .heading(_, let level) where level < 3: return true
@@ -256,7 +256,7 @@ func tableOfContents(document: String) -> [Block] {
 //        }
 //    }
 //}
-
+//
 //extension Node {
 //    convenience init(block: Block) {
 //        switch block {

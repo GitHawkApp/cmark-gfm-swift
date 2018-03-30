@@ -1,15 +1,6 @@
 import XCTest
 import cmark_gfm_swift
 
-func firstInline(_ node: Node) -> Inline {
-    return firstInline(blocks: node.elements)
-}
-
-func firstInline(blocks: [Block]) -> Inline {
-    guard case .paragraph(let text)? = blocks.first else { fatalError() }
-    return text.first!
-}
-
 class Tests: XCTestCase {
     
     func testMarkdownToHTML() {
@@ -84,7 +75,8 @@ class Tests: XCTestCase {
         let node = Node(markdown: markdown)!
         XCTAssertEqual(node.elements.count, 1)
 
-        guard case .mention(let login) = firstInline(node) else { fatalError() }
+        guard case .paragraph(let paragraph)? = node.elements.first else { fatalError() }
+        guard case .mention(let login)? = paragraph.first else { fatalError() }
         XCTAssertEqual(login, "user")
     }
 
@@ -93,7 +85,8 @@ class Tests: XCTestCase {
         let node = Node(markdown: markdown)!
         XCTAssertEqual(node.elements.count, 1)
 
-        guard case .mention(let login) = firstInline(node) else { fatalError() }
+        guard case .paragraph(let paragraph)? = node.elements.first else { fatalError() }
+        guard case .mention(let login)? = paragraph.first else { fatalError() }
         XCTAssertEqual(login, "user123")
     }
 
@@ -102,7 +95,8 @@ class Tests: XCTestCase {
         let node = Node(markdown: markdown)!
         XCTAssertEqual(node.elements.count, 1)
 
-        guard case .mention(let login) = firstInline(node) else { fatalError() }
+        guard case .paragraph(let paragraph)? = node.elements.first else { fatalError() }
+        guard case .mention(let login)? = paragraph.first else { fatalError() }
         XCTAssertEqual(login, "user-123")
     }
 
@@ -111,12 +105,12 @@ class Tests: XCTestCase {
         let node = Node(markdown: markdown)!
         XCTAssertEqual(node.elements.count, 1)
 
-        guard case .paragraph(let texts)? = node.elements.first else { fatalError() }
-        XCTAssertEqual(texts.count, 3)
+        guard case .paragraph(let paragraph)? = node.elements.first else { fatalError() }
+        XCTAssertEqual(paragraph.count, 3)
 
-        guard case .text(let foo) = texts[0] else { fatalError() }
-        guard case .mention(let login) = texts[1] else { fatalError() }
-        guard case .text(let bar) = texts[2] else { fatalError() }
+        guard case .text(let foo) = paragraph[0] else { fatalError() }
+        guard case .mention(let login) = paragraph[1] else { fatalError() }
+        guard case .text(let bar) = paragraph[2] else { fatalError() }
         XCTAssertEqual(foo, "foo ")
         XCTAssertEqual(login, "user")
         XCTAssertEqual(bar, " bar")
@@ -128,12 +122,73 @@ class Tests: XCTestCase {
         XCTAssertEqual(node.elements.count, 1)
 
         guard case .list(let items, _)? = node.elements.first else { fatalError() }
-        guard case .paragraph(let text)? = items.first?.first else { fatalError() }
+        guard case .paragraph(let paragraph)? = items.first?.first else { fatalError() }
         // first element in list is an empty text node. we can filter that out later
-        guard case .checkbox(let checked, let range) = text[1] else { fatalError() }
+        guard case .checkbox(let checked, let range) = paragraph[1] else { fatalError() }
         XCTAssertFalse(checked)
         XCTAssertEqual(range.location, 2)
         XCTAssertEqual(range.length, 3)
     }
-    
+
+    func testMarkdownCheckbox_withNestedList() {
+        let markdown = """
+            - [ ] foo
+              - [ ] foo 2
+            - [x] bar
+              - [x] bar 2
+            """
+        let node = Node(markdown: markdown)!
+        XCTAssertEqual(node.elements.count, 1)
+    }
+
+    func testMarkdownCheckbox_withChecked() {
+        let markdown = "- [x] test"
+        let node = Node(markdown: markdown)!
+        XCTAssertEqual(node.elements.count, 1)
+
+        guard case .list(let items, _)? = node.elements.first else { fatalError() }
+        guard case .paragraph(let paragraph)? = items.first?.first else { fatalError() }
+        // first element in list is an empty text node. we can filter that out later
+        guard case .checkbox(let checked, let range) = paragraph[1] else { fatalError() }
+        XCTAssertTrue(checked)
+        XCTAssertEqual(range.location, 2)
+        XCTAssertEqual(range.length, 3)
+    }
+
+    func testMarkdownCheckbox_withCheckboxPatternInMiddleOfItem() {
+        let markdown = "- foo [ ] bar"
+        let node = Node(markdown: markdown)!
+        XCTAssertEqual(node.elements.count, 1)
+
+        guard case .list(let items, _)? = node.elements.first else { fatalError() }
+        guard case .paragraph(let paragraph)? = items.first?.first else { fatalError() }
+        XCTAssertEqual(paragraph.count, 1)
+    }
+
+    func testMarkdownCheckbox_withCheckboxPatternInMiddleOfText() {
+        let markdown = "foo [ ] bar"
+        let node = Node(markdown: markdown)!
+        XCTAssertEqual(node.elements.count, 1)
+
+        guard case .paragraph(let paragraph)? = node.elements.first else { fatalError() }
+        guard case .text(let text)? = paragraph.first else { fatalError() }
+        XCTAssertEqual(text, "foo [ ] bar")
+    }
+
+    func test() {
+        let markdown = """
+            # Heading
+            ## Subheading
+            Lorem @ipsum _dolor sit_ **amet**.
+            * List item 1
+            * List item 2
+            > Quote
+            > > Quote 2
+            - [ ] check one
+            - [x] check two
+            """
+        let elements = Node(markdown: markdown)!.flatElements
+        XCTAssertEqual(elements.count, 7)
+    }
+
 }

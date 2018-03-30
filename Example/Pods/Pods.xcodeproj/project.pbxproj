@@ -21,6 +21,7 @@
 		1AD2010BEB9B4F5D3CE3B9C831D6B9B6 /* cmarkextensions_export.h in Headers */ = {isa = PBXBuildFile; fileRef = 31958A1F896C46D038BA800B3D856949 /* cmarkextensions_export.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2203824CC08F3D43F8155CDC9C1E20B3 /* html.h in Headers */ = {isa = PBXBuildFile; fileRef = 258BD5372465D1E3606F22F1A1C554B1 /* html.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		241F8207137493D4278E57A4492E6F16 /* references.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F0AF8A7F765C4F7CDECF127C6AD596C /* references.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29873954206DCBFE0043DB77 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29873953206DCBFE0043DB77 /* Element.swift */; };
 		2D68341D22582EEE109325610A5F71EE /* ASTOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AE8B271261BF26A3A3351F597DD9C7 /* ASTOperations.swift */; };
 		2D978B4A35CF216C585D14E75B7CEC3B /* scanners.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DD857E2CAAD88CF93E89EFA47D950F6 /* scanners.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2FD03463EFA92A008B08F0FAC0252592 /* libcmark_gfm.h in Headers */ = {isa = PBXBuildFile; fileRef = 1563B4ECDB3F76FA673DE39C85CC7198 /* libcmark_gfm.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -118,11 +119,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0631E84CFCECBC0BB35CC869CDD5630F /* registry.c */ = {isa = PBXFileReference; includeInIndex = 1; name = registry.c; path = Sources/libcmark_gfm/registry.c; sourceTree = "<group>"; };
+		0631E84CFCECBC0BB35CC869CDD5630F /* registry.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = registry.c; path = Sources/libcmark_gfm/registry.c; sourceTree = "<group>"; };
 		094BCF0636C61CA60493D2A67575D3D4 /* Pods-cmark-gfm-swift_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-cmark-gfm-swift_Tests-dummy.m"; sourceTree = "<group>"; };
 		09B3B0BE8CF8F82D889BB7BD0DE616C1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		09ECBCF6D742FEB87D5BDD2FDCC8E81A /* cmark-gfm-swift.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = "cmark-gfm-swift.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		0B528C0FE5EB8E5475789450C84C6C71 /* tagfilter.c */ = {isa = PBXFileReference; includeInIndex = 1; name = tagfilter.c; path = Sources/libcmark_gfm/tagfilter.c; sourceTree = "<group>"; };
+		09ECBCF6D742FEB87D5BDD2FDCC8E81A /* cmark-gfm-swift.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = "cmark-gfm-swift.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		0B528C0FE5EB8E5475789450C84C6C71 /* tagfilter.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = tagfilter.c; path = Sources/libcmark_gfm/tagfilter.c; sourceTree = "<group>"; };
 		0DD33DC53508A7217A2FC78CB53F80B5 /* libcmark_gfm-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "libcmark_gfm-dummy.m"; sourceTree = "<group>"; };
 		10C72734E1EF86A30082D7A4BF83B275 /* libcmark_gfm-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "libcmark_gfm-prefix.pch"; sourceTree = "<group>"; };
 		1196CE69E133ADD75A810244AD1EA8D4 /* core-extensions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "core-extensions.h"; path = "Sources/libcmark_gfm/include/core-extensions.h"; sourceTree = "<group>"; };
@@ -133,93 +134,94 @@
 		237788333499C0932F4BD58DA15B66C1 /* libcmark_gfm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = libcmark_gfm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24ACF79BDFB839E00984412624233550 /* Pods-cmark-gfm-swift_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-cmark-gfm-swift_Tests-umbrella.h"; sourceTree = "<group>"; };
 		258BD5372465D1E3606F22F1A1C554B1 /* html.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = html.h; path = Sources/libcmark_gfm/include/html.h; sourceTree = "<group>"; };
-		288483891C4927F32E84B6078F5991B3 /* houdini_html_u.c */ = {isa = PBXFileReference; includeInIndex = 1; name = houdini_html_u.c; path = Sources/libcmark_gfm/houdini_html_u.c; sourceTree = "<group>"; };
+		288483891C4927F32E84B6078F5991B3 /* houdini_html_u.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = houdini_html_u.c; path = Sources/libcmark_gfm/houdini_html_u.c; sourceTree = "<group>"; };
 		28C40364A2C9A58141CC6D1CADAD7C81 /* syntax_extension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = syntax_extension.h; path = Sources/libcmark_gfm/include/syntax_extension.h; sourceTree = "<group>"; };
-		297AE486101C0241E19137C34C74152F /* xml.c */ = {isa = PBXFileReference; includeInIndex = 1; name = xml.c; path = Sources/libcmark_gfm/xml.c; sourceTree = "<group>"; };
+		297AE486101C0241E19137C34C74152F /* xml.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = xml.c; path = Sources/libcmark_gfm/xml.c; sourceTree = "<group>"; };
+		29873953206DCBFE0043DB77 /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Element.swift; path = "cmark-gfm-swift/Classes/Element.swift"; sourceTree = "<group>"; };
 		29FEB54BDE6EEC13B0CA36DC293BE60A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2B97898E8C567136EB1E870EDF7D722E /* gfm-extensions.c */ = {isa = PBXFileReference; includeInIndex = 1; name = "gfm-extensions.c"; path = "cmark-gfm-swift/Classes/gfm-extensions.c"; sourceTree = "<group>"; };
+		2B97898E8C567136EB1E870EDF7D722E /* gfm-extensions.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = "gfm-extensions.c"; path = "cmark-gfm-swift/Classes/gfm-extensions.c"; sourceTree = "<group>"; };
 		2D1BBB37C8C8468D863F876BE0E03128 /* gfm-extensions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "gfm-extensions.h"; path = "cmark-gfm-swift/Classes/gfm-extensions.h"; sourceTree = "<group>"; };
-		2D3B74D7C73F4961FFF5F9728523B04C /* cmark_gfm_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = cmark_gfm_swift.framework; path = "cmark-gfm-swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D3B74D7C73F4961FFF5F9728523B04C /* cmark_gfm_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = cmark_gfm_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F0AF8A7F765C4F7CDECF127C6AD596C /* references.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = references.h; path = Sources/libcmark_gfm/include/references.h; sourceTree = "<group>"; };
 		31958A1F896C46D038BA800B3D856949 /* cmarkextensions_export.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cmarkextensions_export.h; path = Sources/libcmark_gfm/include/cmarkextensions_export.h; sourceTree = "<group>"; };
 		3223504AA58CC52F9D8F7C937C49DB6B /* cmark-gfm-swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "cmark-gfm-swift.xcconfig"; sourceTree = "<group>"; };
 		37B53FE5AED999D05DA79B8F487F4F6E /* libcmark_gfm.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = libcmark_gfm.xcconfig; sourceTree = "<group>"; };
-		3AB534345F382BB486BD0A9254FEF4DC /* plaintext.c */ = {isa = PBXFileReference; includeInIndex = 1; name = plaintext.c; path = Sources/libcmark_gfm/plaintext.c; sourceTree = "<group>"; };
-		4093CA3B4471C7082DBCB4AB582092C6 /* table.c */ = {isa = PBXFileReference; includeInIndex = 1; name = table.c; path = Sources/libcmark_gfm/table.c; sourceTree = "<group>"; };
-		40CE234FD610A4C46E05BD87B2C775C9 /* inlines.c */ = {isa = PBXFileReference; includeInIndex = 1; name = inlines.c; path = Sources/libcmark_gfm/inlines.c; sourceTree = "<group>"; };
+		3AB534345F382BB486BD0A9254FEF4DC /* plaintext.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = plaintext.c; path = Sources/libcmark_gfm/plaintext.c; sourceTree = "<group>"; };
+		4093CA3B4471C7082DBCB4AB582092C6 /* table.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = table.c; path = Sources/libcmark_gfm/table.c; sourceTree = "<group>"; };
+		40CE234FD610A4C46E05BD87B2C775C9 /* inlines.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = inlines.c; path = Sources/libcmark_gfm/inlines.c; sourceTree = "<group>"; };
 		417E193575CCBC3114084787532BDA68 /* mention.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mention.h; path = "cmark-gfm-swift/Classes/mention.h"; sourceTree = "<group>"; };
-		4231F99D18D66A5BA0DD52E9FBD8F055 /* linked_list.c */ = {isa = PBXFileReference; includeInIndex = 1; name = linked_list.c; path = Sources/libcmark_gfm/linked_list.c; sourceTree = "<group>"; };
+		4231F99D18D66A5BA0DD52E9FBD8F055 /* linked_list.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = linked_list.c; path = Sources/libcmark_gfm/linked_list.c; sourceTree = "<group>"; };
 		429D739174BFF8E31C377B76A51B8BEE /* cmark-gfm-swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "cmark-gfm-swift-dummy.m"; sourceTree = "<group>"; };
 		4393C4EA3649149141F922CCE1419C07 /* chunk.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = chunk.h; path = Sources/libcmark_gfm/include/chunk.h; sourceTree = "<group>"; };
-		43B3D6894928703032F5D7D32F2F189A /* html.c */ = {isa = PBXFileReference; includeInIndex = 1; name = html.c; path = Sources/libcmark_gfm/html.c; sourceTree = "<group>"; };
+		43B3D6894928703032F5D7D32F2F189A /* html.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = html.c; path = Sources/libcmark_gfm/html.c; sourceTree = "<group>"; };
 		449A4502BE08F38508CCE52082CEA827 /* Pods-cmark-gfm-swift_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-cmark-gfm-swift_Tests.modulemap"; sourceTree = "<group>"; };
-		44FB0133538D4CB8D08F84E57295C83E /* houdini_html_e.c */ = {isa = PBXFileReference; includeInIndex = 1; name = houdini_html_e.c; path = Sources/libcmark_gfm/houdini_html_e.c; sourceTree = "<group>"; };
+		44FB0133538D4CB8D08F84E57295C83E /* houdini_html_e.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = houdini_html_e.c; path = Sources/libcmark_gfm/houdini_html_e.c; sourceTree = "<group>"; };
 		4D2167C3363EC8AE0A502CCD395D14C4 /* tagfilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = tagfilter.h; path = Sources/libcmark_gfm/include/tagfilter.h; sourceTree = "<group>"; };
 		4D8D61AE3387D221FF600883F4A4EDAD /* cmark_version.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cmark_version.h; path = Sources/libcmark_gfm/include/cmark_version.h; sourceTree = "<group>"; };
 		507A35DD66BDA82F467A8EB4EC4BC17A /* plugin.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = plugin.h; path = Sources/libcmark_gfm/include/plugin.h; sourceTree = "<group>"; };
-		5670B8F7DA98412C9DD6E7C27EF0E15E /* utf8.c */ = {isa = PBXFileReference; includeInIndex = 1; name = utf8.c; path = Sources/libcmark_gfm/utf8.c; sourceTree = "<group>"; };
+		5670B8F7DA98412C9DD6E7C27EF0E15E /* utf8.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = utf8.c; path = Sources/libcmark_gfm/utf8.c; sourceTree = "<group>"; };
 		589F65AD7671CBEC07FDCAC95FA31D3E /* table.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = table.h; path = Sources/libcmark_gfm/include/table.h; sourceTree = "<group>"; };
-		58CFF006C316A8C33EC3582AE6C1073B /* commonmark.c */ = {isa = PBXFileReference; includeInIndex = 1; name = commonmark.c; path = Sources/libcmark_gfm/commonmark.c; sourceTree = "<group>"; };
+		58CFF006C316A8C33EC3582AE6C1073B /* commonmark.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = commonmark.c; path = Sources/libcmark_gfm/commonmark.c; sourceTree = "<group>"; };
 		61F81FE14A55509E3C7B4474776894E5 /* houdini.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = houdini.h; path = Sources/libcmark_gfm/include/houdini.h; sourceTree = "<group>"; };
 		6524F6ED1B3BBE32A2D70F51C27024C9 /* utf8.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = utf8.h; path = Sources/libcmark_gfm/include/utf8.h; sourceTree = "<group>"; };
-		65A0DF1AC9683154F3D4736935B1385D /* houdini_href_e.c */ = {isa = PBXFileReference; includeInIndex = 1; name = houdini_href_e.c; path = Sources/libcmark_gfm/houdini_href_e.c; sourceTree = "<group>"; };
+		65A0DF1AC9683154F3D4736935B1385D /* houdini_href_e.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = houdini_href_e.c; path = Sources/libcmark_gfm/houdini_href_e.c; sourceTree = "<group>"; };
 		68AA532C8CB84E0E74EE550B9165255A /* iterator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = iterator.h; path = Sources/libcmark_gfm/include/iterator.h; sourceTree = "<group>"; };
 		6AC2796469032E5C5A57CAF0E9FEB0D5 /* cmark-gfm-swift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "cmark-gfm-swift.h"; path = "cmark-gfm-swift/Classes/cmark-gfm-swift.h"; sourceTree = "<group>"; };
 		6CA3A88E84D4E223C44B5F0E841D3AD8 /* map.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = map.h; path = Sources/libcmark_gfm/include/map.h; sourceTree = "<group>"; };
-		6E5B6809D4BD3C2C5509A9436F7645A1 /* arena.c */ = {isa = PBXFileReference; includeInIndex = 1; name = arena.c; path = Sources/libcmark_gfm/arena.c; sourceTree = "<group>"; };
+		6E5B6809D4BD3C2C5509A9436F7645A1 /* arena.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = arena.c; path = Sources/libcmark_gfm/arena.c; sourceTree = "<group>"; };
 		71AE8B271261BF26A3A3351F597DD9C7 /* ASTOperations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ASTOperations.swift; path = "cmark-gfm-swift/Classes/ASTOperations.swift"; sourceTree = "<group>"; };
 		7515B32A18BB04197E8C3E32F7336BB7 /* buffer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = buffer.h; path = Sources/libcmark_gfm/include/buffer.h; sourceTree = "<group>"; };
-		76D9F1D60D669D6234AFF21334405EFE /* man.c */ = {isa = PBXFileReference; includeInIndex = 1; name = man.c; path = Sources/libcmark_gfm/man.c; sourceTree = "<group>"; };
+		76D9F1D60D669D6234AFF21334405EFE /* man.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = man.c; path = Sources/libcmark_gfm/man.c; sourceTree = "<group>"; };
 		76E9321FA1613447B29CA5169E829029 /* Pods-cmark-gfm-swift_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-cmark-gfm-swift_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		79F992CACF711A7614413FCBD2A431FF /* cmark_extension_api.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cmark_extension_api.h; path = Sources/libcmark_gfm/include/cmark_extension_api.h; sourceTree = "<group>"; };
-		7A095CAD5AE7074DC4431BAF00A89808 /* render.c */ = {isa = PBXFileReference; includeInIndex = 1; name = render.c; path = Sources/libcmark_gfm/render.c; sourceTree = "<group>"; };
-		7B6CF9458D53B401EDD074A1A4FA63ED /* checkbox.c */ = {isa = PBXFileReference; includeInIndex = 1; name = checkbox.c; path = "cmark-gfm-swift/Classes/checkbox.c"; sourceTree = "<group>"; };
+		7A095CAD5AE7074DC4431BAF00A89808 /* render.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = render.c; path = Sources/libcmark_gfm/render.c; sourceTree = "<group>"; };
+		7B6CF9458D53B401EDD074A1A4FA63ED /* checkbox.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = checkbox.c; path = "cmark-gfm-swift/Classes/checkbox.c"; sourceTree = "<group>"; };
 		7BE38D65A11A0EFA6D709C4145F388B7 /* libcmark_gfm-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "libcmark_gfm-umbrella.h"; sourceTree = "<group>"; };
 		7DD857E2CAAD88CF93E89EFA47D950F6 /* scanners.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = scanners.h; path = Sources/libcmark_gfm/include/scanners.h; sourceTree = "<group>"; };
 		7EB0EBB882D662080D274A3AC6D24669 /* Pods-cmark-gfm-swift_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-cmark-gfm-swift_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		7F4CD77F8A8C311C0AAF814679A1BAC4 /* cmark_export.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cmark_export.h; path = Sources/libcmark_gfm/include/cmark_export.h; sourceTree = "<group>"; };
-		7F9D032C0CD2A92C08BCDA14E0A39D2F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		87FB8A8FB246E84B9343B65ABC530DF8 /* Pods_cmark_gfm_swift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_cmark_gfm_swift_Tests.framework; path = "Pods-cmark-gfm-swift_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8919EDAE1CE56DDA41129CD25CBD1F7F /* libcmark_gfm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = libcmark_gfm.framework; path = libcmark_gfm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F9D032C0CD2A92C08BCDA14E0A39D2F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		87FB8A8FB246E84B9343B65ABC530DF8 /* Pods_cmark_gfm_swift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cmark_gfm_swift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8919EDAE1CE56DDA41129CD25CBD1F7F /* libcmark_gfm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = libcmark_gfm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B96C5578E16A3CACFDD61A32AB04844 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C1798765904A0F91280B308BFA62C20 /* checkbox.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = checkbox.h; path = "cmark-gfm-swift/Classes/checkbox.h"; sourceTree = "<group>"; };
-		8EF23F345C3885B2B664A7F1AB767F22 /* footnotes.c */ = {isa = PBXFileReference; includeInIndex = 1; name = footnotes.c; path = Sources/libcmark_gfm/footnotes.c; sourceTree = "<group>"; };
-		90683F3006419ECBE6F44B518F59C200 /* latex.c */ = {isa = PBXFileReference; includeInIndex = 1; name = latex.c; path = Sources/libcmark_gfm/latex.c; sourceTree = "<group>"; };
-		91FF1CD6019095E565DBB5D711932EFC /* mention.c */ = {isa = PBXFileReference; includeInIndex = 1; name = mention.c; path = "cmark-gfm-swift/Classes/mention.c"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		95B29639B35BC6F35064D481FCC3EEE2 /* buffer.c */ = {isa = PBXFileReference; includeInIndex = 1; name = buffer.c; path = Sources/libcmark_gfm/buffer.c; sourceTree = "<group>"; };
+		8EF23F345C3885B2B664A7F1AB767F22 /* footnotes.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = footnotes.c; path = Sources/libcmark_gfm/footnotes.c; sourceTree = "<group>"; };
+		90683F3006419ECBE6F44B518F59C200 /* latex.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = latex.c; path = Sources/libcmark_gfm/latex.c; sourceTree = "<group>"; };
+		91FF1CD6019095E565DBB5D711932EFC /* mention.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mention.c; path = "cmark-gfm-swift/Classes/mention.c"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95B29639B35BC6F35064D481FCC3EEE2 /* buffer.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = buffer.c; path = Sources/libcmark_gfm/buffer.c; sourceTree = "<group>"; };
 		972A1A8522FD83C4A501FAFF5CD3355E /* SwiftAST.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftAST.swift; path = "cmark-gfm-swift/Classes/SwiftAST.swift"; sourceTree = "<group>"; };
-		993FD93DC20F315C8D055C907B223761 /* plugin.c */ = {isa = PBXFileReference; includeInIndex = 1; name = plugin.c; path = Sources/libcmark_gfm/plugin.c; sourceTree = "<group>"; };
+		993FD93DC20F315C8D055C907B223761 /* plugin.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = plugin.c; path = Sources/libcmark_gfm/plugin.c; sourceTree = "<group>"; };
 		99A0AE40D98F464032F50627E8DD62D2 /* cmark-gfm-swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "cmark-gfm-swift-prefix.pch"; sourceTree = "<group>"; };
 		9AE6A4DCE8C9F586CA1338723110599A /* node.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = node.h; path = Sources/libcmark_gfm/include/node.h; sourceTree = "<group>"; };
-		9D8C00F84F9F34F35B2ECBCF0DC0751E /* references.c */ = {isa = PBXFileReference; includeInIndex = 1; name = references.c; path = Sources/libcmark_gfm/references.c; sourceTree = "<group>"; };
-		9E7724C7DBB509279709E2D91D9F56A0 /* core-extensions.c */ = {isa = PBXFileReference; includeInIndex = 1; name = "core-extensions.c"; path = "Sources/libcmark_gfm/core-extensions.c"; sourceTree = "<group>"; };
+		9D8C00F84F9F34F35B2ECBCF0DC0751E /* references.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = references.c; path = Sources/libcmark_gfm/references.c; sourceTree = "<group>"; };
+		9E7724C7DBB509279709E2D91D9F56A0 /* core-extensions.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = "core-extensions.c"; path = "Sources/libcmark_gfm/core-extensions.c"; sourceTree = "<group>"; };
 		9F9645336A8995C3BCFCB54A3E767B05 /* Pods-cmark-gfm-swift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-cmark-gfm-swift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		A3A2760BD93C3004DFA9666FE83F8901 /* strikethrough.c */ = {isa = PBXFileReference; includeInIndex = 1; name = strikethrough.c; path = Sources/libcmark_gfm/strikethrough.c; sourceTree = "<group>"; };
-		A6A3B913716CFF0C95B9BAEAA88E1F6D /* map.c */ = {isa = PBXFileReference; includeInIndex = 1; name = map.c; path = Sources/libcmark_gfm/map.c; sourceTree = "<group>"; };
+		A3A2760BD93C3004DFA9666FE83F8901 /* strikethrough.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = strikethrough.c; path = Sources/libcmark_gfm/strikethrough.c; sourceTree = "<group>"; };
+		A6A3B913716CFF0C95B9BAEAA88E1F6D /* map.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = map.c; path = Sources/libcmark_gfm/map.c; sourceTree = "<group>"; };
 		A74C20AC6BC24606F87F00557C471AA6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		AFAC2EBED9DADB3CB9BEB80BC7F7ECDD /* Pods-cmark-gfm-swift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-cmark-gfm-swift_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B3A1F8D679D498FA8859FB44A61DD91F /* Pods-cmark-gfm-swift_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-cmark-gfm-swift_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		B3D3E33C71AED10177E4F57ED71146F3 /* cmark.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cmark.h; path = Sources/libcmark_gfm/include/cmark.h; sourceTree = "<group>"; };
-		B3D72D6CBC77028787C26D9BDB5BF650 /* autolink.c */ = {isa = PBXFileReference; includeInIndex = 1; name = autolink.c; path = Sources/libcmark_gfm/autolink.c; sourceTree = "<group>"; };
-		BBD76CA14DDDAED2BDC9D99CC63C500A /* scanners.c */ = {isa = PBXFileReference; includeInIndex = 1; name = scanners.c; path = Sources/libcmark_gfm/scanners.c; sourceTree = "<group>"; };
+		B3D72D6CBC77028787C26D9BDB5BF650 /* autolink.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = autolink.c; path = Sources/libcmark_gfm/autolink.c; sourceTree = "<group>"; };
+		BBD76CA14DDDAED2BDC9D99CC63C500A /* scanners.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = scanners.c; path = Sources/libcmark_gfm/scanners.c; sourceTree = "<group>"; };
 		BE27A31B19768450E6F7B8167334B378 /* cmark_ctype.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = cmark_ctype.h; path = Sources/libcmark_gfm/include/cmark_ctype.h; sourceTree = "<group>"; };
-		C58A280E78020C8F9D735D2F983054F8 /* node.c */ = {isa = PBXFileReference; includeInIndex = 1; name = node.c; path = Sources/libcmark_gfm/node.c; sourceTree = "<group>"; };
+		C58A280E78020C8F9D735D2F983054F8 /* node.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = node.c; path = Sources/libcmark_gfm/node.c; sourceTree = "<group>"; };
 		C93458929977F7642A73D00050D9424F /* strikethrough.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = strikethrough.h; path = Sources/libcmark_gfm/include/strikethrough.h; sourceTree = "<group>"; };
-		C952C6B133FC4994788A696FCFB77F8B /* cmark_ctype.c */ = {isa = PBXFileReference; includeInIndex = 1; name = cmark_ctype.c; path = Sources/libcmark_gfm/cmark_ctype.c; sourceTree = "<group>"; };
+		C952C6B133FC4994788A696FCFB77F8B /* cmark_ctype.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = cmark_ctype.c; path = Sources/libcmark_gfm/cmark_ctype.c; sourceTree = "<group>"; };
 		CB5B80B946E4A5A934289A6F8F2BDAB9 /* registry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = registry.h; path = Sources/libcmark_gfm/include/registry.h; sourceTree = "<group>"; };
 		CC06E4AA608F6349E0FA92C657361F1C /* ext_scanners.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ext_scanners.h; path = Sources/libcmark_gfm/include/ext_scanners.h; sourceTree = "<group>"; };
 		D0C259B430E5BB413001BD1A2CDFA203 /* Node.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Node.swift; path = "cmark-gfm-swift/Classes/Node.swift"; sourceTree = "<group>"; };
 		D831B348E4723676B62365D30E910F4B /* parser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = parser.h; path = Sources/libcmark_gfm/include/parser.h; sourceTree = "<group>"; };
-		D87FD06C93BC961C72C3BA8ED0261407 /* syntax_extension.c */ = {isa = PBXFileReference; includeInIndex = 1; name = syntax_extension.c; path = Sources/libcmark_gfm/syntax_extension.c; sourceTree = "<group>"; };
-		D89A8B0901B34DC969CDEE76EE9F3B72 /* blocks.c */ = {isa = PBXFileReference; includeInIndex = 1; name = blocks.c; path = Sources/libcmark_gfm/blocks.c; sourceTree = "<group>"; };
-		DAFAD359CA3D8E3D490C54B8BA941BE4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		DB21FC589F96F9B5C1545D8C41CFA1C3 /* iterator.c */ = {isa = PBXFileReference; includeInIndex = 1; name = iterator.c; path = Sources/libcmark_gfm/iterator.c; sourceTree = "<group>"; };
-		DB2C5E3DFD8CE6A528CA2B0AFCC6E504 /* ext_scanners.c */ = {isa = PBXFileReference; includeInIndex = 1; name = ext_scanners.c; path = Sources/libcmark_gfm/ext_scanners.c; sourceTree = "<group>"; };
+		D87FD06C93BC961C72C3BA8ED0261407 /* syntax_extension.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = syntax_extension.c; path = Sources/libcmark_gfm/syntax_extension.c; sourceTree = "<group>"; };
+		D89A8B0901B34DC969CDEE76EE9F3B72 /* blocks.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = blocks.c; path = Sources/libcmark_gfm/blocks.c; sourceTree = "<group>"; };
+		DAFAD359CA3D8E3D490C54B8BA941BE4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		DB21FC589F96F9B5C1545D8C41CFA1C3 /* iterator.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = iterator.c; path = Sources/libcmark_gfm/iterator.c; sourceTree = "<group>"; };
+		DB2C5E3DFD8CE6A528CA2B0AFCC6E504 /* ext_scanners.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ext_scanners.c; path = Sources/libcmark_gfm/ext_scanners.c; sourceTree = "<group>"; };
 		DD0C6CBB3F3B67D4F9C8F885EF745306 /* footnotes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = footnotes.h; path = Sources/libcmark_gfm/include/footnotes.h; sourceTree = "<group>"; };
 		DFC4F2916AC2C823826E70F0B4A12BA0 /* config.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = config.h; path = Sources/libcmark_gfm/include/config.h; sourceTree = "<group>"; };
 		E0451427799A9DCDC83CF9443215C88C /* render.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = render.h; path = Sources/libcmark_gfm/include/render.h; sourceTree = "<group>"; };
-		EB3D5E4ECDE766072AEB462534AC21B1 /* cmark.c */ = {isa = PBXFileReference; includeInIndex = 1; name = cmark.c; path = Sources/libcmark_gfm/cmark.c; sourceTree = "<group>"; };
+		EB3D5E4ECDE766072AEB462534AC21B1 /* cmark.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = cmark.c; path = Sources/libcmark_gfm/cmark.c; sourceTree = "<group>"; };
 		EB4257F8F59283F5A77B1052CA904E52 /* libcmark_gfm.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = libcmark_gfm.modulemap; sourceTree = "<group>"; };
 		EF8D831638C02D3D8D3E748CB1C2CE71 /* cmark-gfm-swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "cmark-gfm-swift-umbrella.h"; sourceTree = "<group>"; };
 		EFA96AE4AF35F0B5967482EB9C2F0F3D /* cmark-gfm-swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "cmark-gfm-swift.modulemap"; sourceTree = "<group>"; };
@@ -349,7 +351,6 @@
 				297AE486101C0241E19137C34C74152F /* xml.c */,
 				7EFCF54FE95E6EAC830407138FCF8CDD /* Support Files */,
 			);
-			name = libcmark_gfm;
 			path = libcmark_gfm;
 			sourceTree = "<group>";
 		};
@@ -459,6 +460,7 @@
 				417E193575CCBC3114084787532BDA68 /* mention.h */,
 				D0C259B430E5BB413001BD1A2CDFA203 /* Node.swift */,
 				972A1A8522FD83C4A501FAFF5CD3355E /* SwiftAST.swift */,
+				29873953206DCBFE0043DB77 /* Element.swift */,
 				B862BC85FA2BCC2C1C17C7A1BDA3F804 /* Pod */,
 				CA61917B0C3F90D4AF69890450BE0722 /* Support Files */,
 			);
@@ -620,6 +622,7 @@
 			files = (
 				2D68341D22582EEE109325610A5F71EE /* ASTOperations.swift in Sources */,
 				D8BD2D1296AAD73A158351B1F7E26AEA /* checkbox.c in Sources */,
+				29873954206DCBFE0043DB77 /* Element.swift in Sources */,
 				60ACD95B9EDD7EA55E4E58CD0CB75E66 /* cmark-gfm-swift-dummy.m in Sources */,
 				D82F7664C3307B0927EC5804551567C7 /* gfm-extensions.c in Sources */,
 				6268E4A1BE9774B43C55205361171F46 /* mention.c in Sources */,
