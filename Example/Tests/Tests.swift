@@ -1,6 +1,25 @@
 import XCTest
 import cmark_gfm_swift
 
+extension TextElement {
+    var string: String {
+        switch self {
+        case .code(let text): return text
+        case .emphasis(let children): return children.string
+        case .link(let children, _, _): return children.string
+        case .mention(let login): return login
+        case .strikethrough(let children): return children.string
+        case .strong(let children): return children.string
+        case .text(let text): return text
+        default: return ""
+        }
+    }
+}
+
+extension Sequence where Iterator.Element == TextElement {
+    var string: String { return reduce("") { $0 + $1.string } }
+}
+
 class Tests: XCTestCase {
     
     func testMarkdownToHTML() {
@@ -175,13 +194,15 @@ class Tests: XCTestCase {
         XCTAssertEqual(text, "foo [ ] bar")
     }
 
-    func test() {
+    func testKitchenSync() {
         let markdown = """
             # Heading
             ## Subheading
             Lorem @ipsum _dolor sit_ **amet**.
             * List item 1
             * List item 2
+              * Nested list item 1
+              * Nested list item 2
             > Quote
             > > Quote 2
             - [ ] check one
@@ -189,6 +210,46 @@ class Tests: XCTestCase {
             """
         let elements = Node(markdown: markdown)!.flatElements
         XCTAssertEqual(elements.count, 7)
+
+        guard case .heading(let h1, let l1) = elements[0] else { fatalError() }
+        XCTAssertEqual(h1.string, "Heading")
+        XCTAssertEqual(l1, 1)
+
+        guard case .heading(let h2, let l2) = elements[1] else { fatalError() }
+        XCTAssertEqual(h2.string, "Subheading")
+        XCTAssertEqual(l2, 2)
+
+        guard case .text(let t1) = elements[2] else { fatalError() }
+        XCTAssertEqual(t1.string, "Lorem ipsum dolor sit amet.")
+
+        guard case .list(let i1, _) = elements[3] else { fatalError() }
+        XCTAssertEqual(i1.count, 2)
+        XCTAssertEqual(i1[0].count, 1)
+        XCTAssertEqual(i1[1].count, 2)
+
+        guard case .nested(let n1, _) = i1[1][1] else { fatalError() }
+        XCTAssertEqual(n1.count, 2)
+
+        guard case .quote(let q1, let ql1) = elements[4] else { fatalError() }
+        XCTAssertEqual(q1.string, "Quote")
+        XCTAssertEqual(ql1, 1)
+
+        guard case .quote(let q2, let ql2) = elements[5] else { fatalError() }
+        XCTAssertEqual(q2.string, "Quote 2")
+        XCTAssertEqual(ql2, 2)
+    }
+
+    func testComplicatedLists() {
+        let markdown = """
+            - a
+              > b
+              ```
+              c
+              ```
+            - d
+            """
+        let elements = Node(markdown: markdown)!.flatElements
+        XCTAssertEqual(elements.count, 1)
     }
 
 }

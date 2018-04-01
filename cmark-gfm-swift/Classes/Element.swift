@@ -37,6 +37,24 @@ public enum TextElement: CustomStringConvertible {
     }
 }
 
+public enum ListElement: CustomStringConvertible {
+    case text(text: TextLine)
+    case nested(children: [[ListElement]], type: ListType) // depth?
+
+    public var description: String {
+        switch self {
+        case .text(let children): return "\(children.map { $0.description }.joined())"
+        case .nested(let children, let type):
+            let mark: String
+            switch type {
+            case .unordered: mark = "-"
+            case .ordered: mark = "1."
+            }
+            return "\(mark) \(children.map { $0.description }.joined())"
+        }
+    }
+}
+
 extension Inline {
     var textElement: TextElement? {
         switch self {
@@ -68,29 +86,45 @@ extension Block {
         }
         return nil
     }
+    var listElement: ListElement? {
+        switch self {
+        case .paragraph(let text):
+            return .text(text: text.textElements)
+        case .blockQuote(let items):
+            return .text(text: items.textElements.flatMap { $0 })
+        case .custom(let literal):
+            return .text(text: [.text(text: literal)])
+        case .codeBlock(let text, _):
+            return .text(text: [.code(text: text)])
+        case .list(let items, let type):
+            return .nested(children: items.flatMap { $0.listElements }, type: type)
+        default: return nil
+        }
+    }
 }
 
 extension Sequence where Iterator.Element == Block {
     var textElements: [[TextElement]] { return flatMap { $0.textElements } }
+    var listElements: [ListElement] { return flatMap { $0.listElement } }
 }
 
 public typealias TextLine = [TextElement]
 
 public enum Element: CustomStringConvertible {
     case text(items: TextLine)
-    case quote(items: TextLine)
+    case quote(items: TextLine, level: Int)
     case image(title: String, url: String)
     case html(text: String)
     case table
     case hr
     case codeBlock(text: String, language: String?)
     case heading(text: TextLine, level: Int)
-    case list(items: [[TextLine]], type: ListType)
+    case list(items: [[ListElement]], type: ListType)
 
     public var description: String {
         switch self {
         case .text(let items): return "text: \(items.map { $0.description }.joined())"
-        case .quote(let items): return "quote: \(items.map { $0.description }.joined())"
+        case .quote(let items, _): return "quote: \(items.map { $0.description }.joined())"
         case .image(_, let url): return "image: \(url)"
         case .html(let text): return "html: \(text)"
         case .table: return "table"
@@ -129,9 +163,7 @@ extension Block {
         case .html(let text):
             return [.html(text: text)]
         case .list(let items, let type):
-            // only allow text element lists
-            let textItems = items.map { $0.textElements }
-            return [.list(items: textItems, type: type)]
+            return [.list(items: items.flatMap { $0.listElements }, type: type)]
         case .paragraph(let text):
             let builder = InlineBuilder(options: options)
             text.forEach { $0.fold(builder: builder) }
@@ -164,7 +196,9 @@ class InlineBuilder {
     }
     var currentText: Element? {
         guard text.count > 0 else { return nil }
-        return options.quoteLevel > 0 ? .quote(items: text) : .text(items: text)
+        return options.quoteLevel > 0
+            ? .quote(items: text, level: options.quoteLevel)
+            : .text(items: text)
     }
     func pushNonText(_ el: Element) {
         if let currentText = self.currentText {
