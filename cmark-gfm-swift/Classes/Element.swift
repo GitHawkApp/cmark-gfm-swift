@@ -101,6 +101,19 @@ extension Block {
         default: return nil
         }
     }
+    var tableCell: TextLine? {
+        switch self {
+        case .tableCell(let items): return items.textElements
+        default: return nil
+        }
+    }
+    var tableRow: TableRow? {
+        switch self {
+        case .tableRow(let items): return .row(cells: items.flatMap { $0.tableCell })
+        case .tableHeader(let items): return .header(cells: items.flatMap { $0.tableCell })
+        default: return nil
+        }
+    }
 }
 
 extension Sequence where Iterator.Element == Block {
@@ -110,12 +123,17 @@ extension Sequence where Iterator.Element == Block {
 
 public typealias TextLine = [TextElement]
 
+public enum TableRow {
+    case header(cells: [TextLine])
+    case row(cells: [TextLine])
+}
+
 public enum Element: CustomStringConvertible {
     case text(items: TextLine)
     case quote(items: TextLine, level: Int)
     case image(title: String, url: String)
     case html(text: String)
-    case table
+    case table(rows: [TableRow])
     case hr
     case codeBlock(text: String, language: String?)
     case heading(text: TextLine, level: Int)
@@ -174,13 +192,9 @@ extension Block {
             }
             return els
         case .table(let items):
-            return []
-        case .tableRow(let items):
-            return []
-        case .tableCell(let items):
-            return []
-        case .tableHeader(let items):
-            return []
+            return [.table(rows: items.flatMap { $0.tableRow })]
+        case .tableHeader, .tableRow, .tableCell:
+            return [] // handled in flattening .table
         case .thematicBreak:
             return [.hr]
         }

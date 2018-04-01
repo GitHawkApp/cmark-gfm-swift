@@ -252,4 +252,27 @@ class Tests: XCTestCase {
         XCTAssertEqual(elements.count, 1)
     }
 
+    func testTables() {
+        let markdown = """
+            | foo | bar |
+            | --- | --- |
+            | baz | bim |
+            """
+        let elements = Node(markdown: markdown)!.flatElements
+        XCTAssertEqual(elements.count, 1)
+
+        guard case .table(let rows) = elements[0] else { fatalError() }
+        XCTAssertEqual(rows.count, 2)
+
+        guard case .header(let headerCells) = rows[0] else { fatalError() }
+        XCTAssertEqual(headerCells.count, 2)
+        XCTAssertEqual(headerCells[0].string, "foo")
+        XCTAssertEqual(headerCells[1].string, "bar")
+
+        guard case .row(let cells) = rows[1] else { fatalError() }
+        XCTAssertEqual(cells.count, 2)
+        XCTAssertEqual(cells[0].string, "baz")
+        XCTAssertEqual(cells[1].string, "bim")
+    }
+
 }
