@@ -238,21 +238,21 @@
 		29C286D5207087CF002C19F7 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				29C28DA22070A5EF002C19F7 /* cmark_gfm */,
-				2911C5652070879600732441 /* Info.plist */,
-				29C286D6207087CF002C19F7 /* ListElement.swift */,
-				29C286D7207087CF002C19F7 /* TextElement.swift */,
-				29C286D8207087CF002C19F7 /* Block+TableRow.swift */,
-				29C286D9207087CF002C19F7 /* TableRow.swift */,
-				29C286DA207087CF002C19F7 /* Element.swift */,
 				29C286DB207087CF002C19F7 /* ASTOperations.swift */,
-				29C286E4207087CF002C19F7 /* Node+Elements.swift */,
-				29C286E5207087CF002C19F7 /* cmark-gfm-swift.h */,
-				29C286E6207087CF002C19F7 /* Inline+TextElement.swift */,
 				29C286E7207087CF002C19F7 /* Block+ListElement.swift */,
+				29C286D8207087CF002C19F7 /* Block+TableRow.swift */,
 				29C286E8207087CF002C19F7 /* Block+TextElement.swift */,
+				29C28DA22070A5EF002C19F7 /* cmark_gfm */,
+				29C286E5207087CF002C19F7 /* cmark-gfm-swift.h */,
+				29C286DA207087CF002C19F7 /* Element.swift */,
+				2911C5652070879600732441 /* Info.plist */,
+				29C286E6207087CF002C19F7 /* Inline+TextElement.swift */,
+				29C286D6207087CF002C19F7 /* ListElement.swift */,
 				29C286E9207087CF002C19F7 /* Node.swift */,
+				29C286E4207087CF002C19F7 /* Node+Elements.swift */,
 				29C286EA207087CF002C19F7 /* SwiftAST.swift */,
+				29C286D9207087CF002C19F7 /* TableRow.swift */,
+				29C286D7207087CF002C19F7 /* TextElement.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";

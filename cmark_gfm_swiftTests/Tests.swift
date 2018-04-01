@@ -227,8 +227,9 @@ class Tests: XCTestCase {
         XCTAssertEqual(i1[0].count, 1)
         XCTAssertEqual(i1[1].count, 2)
 
-        guard case .list(let n1, _) = i1[1][1] else { fatalError() }
+        guard case .list(let n1, _, let nl1) = i1[1][1] else { fatalError() }
         XCTAssertEqual(n1.count, 2)
+        XCTAssertEqual(nl1, 1)
 
         guard case .quote(let q1, let ql1) = elements[4] else { fatalError() }
         XCTAssertEqual(q1.string, "Quote")
