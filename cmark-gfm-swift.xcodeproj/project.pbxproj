@@ -1,0 +1,790 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		29C286EB207087CF002C19F7 /* ListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C286D6207087CF002C19F7 /* ListElement.swift */; };
+		29C286EC207087CF002C19F7 /* TextElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C286D7207087CF002C19F7 /* TextElement.swift */; };
+		29C286ED207087CF002C19F7 /* Block+TableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C286D8207087CF002C19F7 /* Block+TableRow.swift */; };
+		29C286EE207087CF002C19F7 /* TableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C286D9207087CF002C19F7 /* TableRow.swift */; };
+		29C286EF207087CF002C19F7 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C286DA207087CF002C19F7 /* Element.swift */; };
+		29C286F0207087CF002C19F7 /* ASTOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C286DB207087CF002C19F7 /* ASTOperations.swift */; };
+		29C286F7207087CF002C19F7 /* Node+Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C286E4207087CF002C19F7 /* Node+Elements.swift */; };
+		29C286F8207087CF002C19F7 /* cmark-gfm-swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C286E5207087CF002C19F7 /* cmark-gfm-swift.h */; };
+		29C286F9207087CF002C19F7 /* Inline+TextElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C286E6207087CF002C19F7 /* Inline+TextElement.swift */; };
+		29C286FA207087CF002C19F7 /* Block+ListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C286E7207087CF002C19F7 /* Block+ListElement.swift */; };
+		29C286FB207087CF002C19F7 /* Block+TextElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C286E8207087CF002C19F7 /* Block+TextElement.swift */; };
+		29C286FC207087CF002C19F7 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C286E9207087CF002C19F7 /* Node.swift */; };
+		29C286FD207087CF002C19F7 /* SwiftAST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C286EA207087CF002C19F7 /* SwiftAST.swift */; };
+		29C28DE82070A5EF002C19F7 /* xml.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DA32070A5EF002C19F7 /* xml.c */; };
+		29C28DE92070A5EF002C19F7 /* strikethrough.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DA42070A5EF002C19F7 /* strikethrough.c */; };
+		29C28DEA2070A5EF002C19F7 /* cmark.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DA52070A5EF002C19F7 /* cmark.c */; };
+		29C28DEB2070A5EF002C19F7 /* scanners.re in Resources */ = {isa = PBXBuildFile; fileRef = 29C28DA62070A5EF002C19F7 /* scanners.re */; };
+		29C28DEC2070A5EF002C19F7 /* man.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DA72070A5EF002C19F7 /* man.c */; };
+		29C28DED2070A5EF002C19F7 /* buffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DA82070A5EF002C19F7 /* buffer.c */; };
+		29C28DEE2070A5EF002C19F7 /* autolink.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DA92070A5EF002C19F7 /* autolink.c */; };
+		29C28DEF2070A5EF002C19F7 /* blocks.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DAA2070A5EF002C19F7 /* blocks.c */; };
+		29C28DF02070A5EF002C19F7 /* cmark_ctype.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DAB2070A5EF002C19F7 /* cmark_ctype.c */; };
+		29C28DF12070A5EF002C19F7 /* table.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DAC2070A5EF002C19F7 /* table.c */; };
+		29C28DF22070A5EF002C19F7 /* inlines.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DAD2070A5EF002C19F7 /* inlines.c */; };
+		29C28DF32070A5EF002C19F7 /* latex.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DAE2070A5EF002C19F7 /* latex.c */; };
+		29C28DF42070A5EF002C19F7 /* houdini_href_e.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DAF2070A5EF002C19F7 /* houdini_href_e.c */; };
+		29C28DF52070A5EF002C19F7 /* syntax_extension.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DB02070A5EF002C19F7 /* syntax_extension.c */; };
+		29C28DF62070A5EF002C19F7 /* case_fold_switch.inc in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DB12070A5EF002C19F7 /* case_fold_switch.inc */; };
+		29C28DF72070A5EF002C19F7 /* entities.inc in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DB22070A5EF002C19F7 /* entities.inc */; };
+		29C28DF82070A5EF002C19F7 /* ext_scanners.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DB32070A5EF002C19F7 /* ext_scanners.c */; };
+		29C28DF92070A5EF002C19F7 /* tagfilter.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DB42070A5EF002C19F7 /* tagfilter.c */; };
+		29C28DFA2070A5EF002C19F7 /* houdini_html_e.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DB52070A5EF002C19F7 /* houdini_html_e.c */; };
+		29C28DFB2070A5EF002C19F7 /* cmarkextensions_export.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DB72070A5EF002C19F7 /* cmarkextensions_export.h */; };
+		29C28DFC2070A5EF002C19F7 /* cmark_export.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DB82070A5EF002C19F7 /* cmark_export.h */; };
+		29C28DFD2070A5EF002C19F7 /* html.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DB92070A5EF002C19F7 /* html.h */; };
+		29C28DFE2070A5EF002C19F7 /* plugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DBA2070A5EF002C19F7 /* plugin.h */; };
+		29C28DFF2070A5EF002C19F7 /* map.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DBB2070A5EF002C19F7 /* map.h */; };
+		29C28E002070A5EF002C19F7 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DBC2070A5EF002C19F7 /* config.h */; };
+		29C28E012070A5EF002C19F7 /* chunk.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DBD2070A5EF002C19F7 /* chunk.h */; };
+		29C28E022070A5EF002C19F7 /* footnotes.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DBE2070A5EF002C19F7 /* footnotes.h */; };
+		29C28E032070A5EF002C19F7 /* parser.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DBF2070A5EF002C19F7 /* parser.h */; };
+		29C28E042070A5EF002C19F7 /* scanners.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DC02070A5EF002C19F7 /* scanners.h */; };
+		29C28E052070A5EF002C19F7 /* libcmark_gfm.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DC12070A5EF002C19F7 /* libcmark_gfm.h */; };
+		29C28E062070A5EF002C19F7 /* node.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DC22070A5EF002C19F7 /* node.h */; };
+		29C28E072070A5EF002C19F7 /* core-extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DC32070A5EF002C19F7 /* core-extensions.h */; };
+		29C28E082070A5EF002C19F7 /* registry.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DC42070A5EF002C19F7 /* registry.h */; };
+		29C28E092070A5EF002C19F7 /* cmark_version.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DC52070A5EF002C19F7 /* cmark_version.h */; };
+		29C28E0A2070A5EF002C19F7 /* autolink.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DC62070A5EF002C19F7 /* autolink.h */; };
+		29C28E0B2070A5EF002C19F7 /* cmark_ctype.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DC72070A5EF002C19F7 /* cmark_ctype.h */; };
+		29C28E0C2070A5EF002C19F7 /* buffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DC82070A5EF002C19F7 /* buffer.h */; };
+		29C28E0D2070A5EF002C19F7 /* cmark.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DC92070A5EF002C19F7 /* cmark.h */; };
+		29C28E0E2070A5EF002C19F7 /* strikethrough.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DCA2070A5EF002C19F7 /* strikethrough.h */; };
+		29C28E0F2070A5EF002C19F7 /* cmark_extension_api.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DCB2070A5EF002C19F7 /* cmark_extension_api.h */; };
+		29C28E102070A5EF002C19F7 /* syntax_extension.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DCC2070A5EF002C19F7 /* syntax_extension.h */; };
+		29C28E112070A5EF002C19F7 /* inlines.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DCD2070A5EF002C19F7 /* inlines.h */; };
+		29C28E122070A5EF002C19F7 /* table.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DCE2070A5EF002C19F7 /* table.h */; };
+		29C28E132070A5EF002C19F7 /* tagfilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DCF2070A5EF002C19F7 /* tagfilter.h */; };
+		29C28E142070A5EF002C19F7 /* ext_scanners.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DD02070A5EF002C19F7 /* ext_scanners.h */; };
+		29C28E152070A5EF002C19F7 /* houdini.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DD12070A5EF002C19F7 /* houdini.h */; };
+		29C28E162070A5EF002C19F7 /* iterator.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DD22070A5EF002C19F7 /* iterator.h */; };
+		29C28E172070A5EF002C19F7 /* utf8.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DD32070A5EF002C19F7 /* utf8.h */; };
+		29C28E182070A5EF002C19F7 /* references.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DD42070A5EF002C19F7 /* references.h */; };
+		29C28E192070A5EF002C19F7 /* render.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28DD52070A5EF002C19F7 /* render.h */; };
+		29C28E1A2070A5EF002C19F7 /* plaintext.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DD62070A5EF002C19F7 /* plaintext.c */; };
+		29C28E1B2070A5EF002C19F7 /* utf8.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DD72070A5EF002C19F7 /* utf8.c */; };
+		29C28E1C2070A5EF002C19F7 /* references.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DD82070A5EF002C19F7 /* references.c */; };
+		29C28E1D2070A5EF002C19F7 /* render.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DD92070A5EF002C19F7 /* render.c */; };
+		29C28E1E2070A5EF002C19F7 /* iterator.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DDA2070A5EF002C19F7 /* iterator.c */; };
+		29C28E1F2070A5EF002C19F7 /* arena.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DDB2070A5EF002C19F7 /* arena.c */; };
+		29C28E202070A5EF002C19F7 /* linked_list.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DDC2070A5EF002C19F7 /* linked_list.c */; };
+		29C28E212070A5EF002C19F7 /* commonmark.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DDD2070A5EF002C19F7 /* commonmark.c */; };
+		29C28E222070A5EF002C19F7 /* map.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DDE2070A5EF002C19F7 /* map.c */; };
+		29C28E232070A5EF002C19F7 /* html.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DDF2070A5EF002C19F7 /* html.c */; };
+		29C28E242070A5EF002C19F7 /* plugin.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DE02070A5EF002C19F7 /* plugin.c */; };
+		29C28E252070A5EF002C19F7 /* scanners.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DE12070A5EF002C19F7 /* scanners.c */; };
+		29C28E262070A5EF002C19F7 /* footnotes.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DE32070A5EF002C19F7 /* footnotes.c */; };
+		29C28E272070A5EF002C19F7 /* houdini_html_u.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DE42070A5EF002C19F7 /* houdini_html_u.c */; };
+		29C28E282070A5EF002C19F7 /* registry.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DE52070A5EF002C19F7 /* registry.c */; };
+		29C28E292070A5EF002C19F7 /* node.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DE62070A5EF002C19F7 /* node.c */; };
+		29C28E2A2070A5EF002C19F7 /* core-extensions.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DE72070A5EF002C19F7 /* core-extensions.c */; };
+		29C28E2D2070A6B2002C19F7 /* checkbox.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28E2B2070A6B1002C19F7 /* checkbox.h */; };
+		29C28E2E2070A6B2002C19F7 /* mention.h in Headers */ = {isa = PBXBuildFile; fileRef = 29C28E2C2070A6B2002C19F7 /* mention.h */; };
+		29C28E312070A6B9002C19F7 /* mention.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28E2F2070A6B9002C19F7 /* mention.c */; };
+		29C28E322070A6B9002C19F7 /* checkbox.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28E302070A6B9002C19F7 /* checkbox.c */; };
+		29C28E3C2070A6F4002C19F7 /* cmark_gfm_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2911C5612070879600732441 /* cmark_gfm_swift.framework */; };
+		29C28E432070A70F002C19F7 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C28E422070A70F002C19F7 /* Tests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		29C28E3D2070A6F4002C19F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2911C5582070879600732441 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2911C5602070879600732441;
+			remoteInfo = "cmark-gfm-swift";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2911C5612070879600732441 /* cmark_gfm_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = cmark_gfm_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2911C5652070879600732441 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29C286D6207087CF002C19F7 /* ListElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListElement.swift; sourceTree = "<group>"; };
+		29C286D7207087CF002C19F7 /* TextElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextElement.swift; sourceTree = "<group>"; };
+		29C286D8207087CF002C19F7 /* Block+TableRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Block+TableRow.swift"; sourceTree = "<group>"; };
+		29C286D9207087CF002C19F7 /* TableRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableRow.swift; sourceTree = "<group>"; };
+		29C286DA207087CF002C19F7 /* Element.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
+		29C286DB207087CF002C19F7 /* ASTOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASTOperations.swift; sourceTree = "<group>"; };
+		29C286E4207087CF002C19F7 /* Node+Elements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Node+Elements.swift"; sourceTree = "<group>"; };
+		29C286E5207087CF002C19F7 /* cmark-gfm-swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "cmark-gfm-swift.h"; sourceTree = "<group>"; };
+		29C286E6207087CF002C19F7 /* Inline+TextElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Inline+TextElement.swift"; sourceTree = "<group>"; };
+		29C286E7207087CF002C19F7 /* Block+ListElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Block+ListElement.swift"; sourceTree = "<group>"; };
+		29C286E8207087CF002C19F7 /* Block+TextElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Block+TextElement.swift"; sourceTree = "<group>"; };
+		29C286E9207087CF002C19F7 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		29C286EA207087CF002C19F7 /* SwiftAST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftAST.swift; sourceTree = "<group>"; };
+		29C28DA32070A5EF002C19F7 /* xml.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = xml.c; sourceTree = "<group>"; };
+		29C28DA42070A5EF002C19F7 /* strikethrough.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = strikethrough.c; sourceTree = "<group>"; };
+		29C28DA52070A5EF002C19F7 /* cmark.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmark.c; sourceTree = "<group>"; };
+		29C28DA62070A5EF002C19F7 /* scanners.re */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = scanners.re; sourceTree = "<group>"; };
+		29C28DA72070A5EF002C19F7 /* man.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = man.c; sourceTree = "<group>"; };
+		29C28DA82070A5EF002C19F7 /* buffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = buffer.c; sourceTree = "<group>"; };
+		29C28DA92070A5EF002C19F7 /* autolink.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = autolink.c; sourceTree = "<group>"; };
+		29C28DAA2070A5EF002C19F7 /* blocks.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = blocks.c; sourceTree = "<group>"; };
+		29C28DAB2070A5EF002C19F7 /* cmark_ctype.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cmark_ctype.c; sourceTree = "<group>"; };
+		29C28DAC2070A5EF002C19F7 /* table.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = table.c; sourceTree = "<group>"; };
+		29C28DAD2070A5EF002C19F7 /* inlines.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inlines.c; sourceTree = "<group>"; };
+		29C28DAE2070A5EF002C19F7 /* latex.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = latex.c; sourceTree = "<group>"; };
+		29C28DAF2070A5EF002C19F7 /* houdini_href_e.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = houdini_href_e.c; sourceTree = "<group>"; };
+		29C28DB02070A5EF002C19F7 /* syntax_extension.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = syntax_extension.c; sourceTree = "<group>"; };
+		29C28DB12070A5EF002C19F7 /* case_fold_switch.inc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; path = case_fold_switch.inc; sourceTree = "<group>"; };
+		29C28DB22070A5EF002C19F7 /* entities.inc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.pascal; path = entities.inc; sourceTree = "<group>"; };
+		29C28DB32070A5EF002C19F7 /* ext_scanners.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ext_scanners.c; sourceTree = "<group>"; };
+		29C28DB42070A5EF002C19F7 /* tagfilter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tagfilter.c; sourceTree = "<group>"; };
+		29C28DB52070A5EF002C19F7 /* houdini_html_e.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = houdini_html_e.c; sourceTree = "<group>"; };
+		29C28DB72070A5EF002C19F7 /* cmarkextensions_export.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmarkextensions_export.h; sourceTree = "<group>"; };
+		29C28DB82070A5EF002C19F7 /* cmark_export.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmark_export.h; sourceTree = "<group>"; };
+		29C28DB92070A5EF002C19F7 /* html.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = html.h; sourceTree = "<group>"; };
+		29C28DBA2070A5EF002C19F7 /* plugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plugin.h; sourceTree = "<group>"; };
+		29C28DBB2070A5EF002C19F7 /* map.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = map.h; sourceTree = "<group>"; };
+		29C28DBC2070A5EF002C19F7 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		29C28DBD2070A5EF002C19F7 /* chunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chunk.h; sourceTree = "<group>"; };
+		29C28DBE2070A5EF002C19F7 /* footnotes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = footnotes.h; sourceTree = "<group>"; };
+		29C28DBF2070A5EF002C19F7 /* parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parser.h; sourceTree = "<group>"; };
+		29C28DC02070A5EF002C19F7 /* scanners.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scanners.h; sourceTree = "<group>"; };
+		29C28DC12070A5EF002C19F7 /* libcmark_gfm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libcmark_gfm.h; sourceTree = "<group>"; };
+		29C28DC22070A5EF002C19F7 /* node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = node.h; sourceTree = "<group>"; };
+		29C28DC32070A5EF002C19F7 /* core-extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "core-extensions.h"; sourceTree = "<group>"; };
+		29C28DC42070A5EF002C19F7 /* registry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = registry.h; sourceTree = "<group>"; };
+		29C28DC52070A5EF002C19F7 /* cmark_version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmark_version.h; sourceTree = "<group>"; };
+		29C28DC62070A5EF002C19F7 /* autolink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = autolink.h; sourceTree = "<group>"; };
+		29C28DC72070A5EF002C19F7 /* cmark_ctype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmark_ctype.h; sourceTree = "<group>"; };
+		29C28DC82070A5EF002C19F7 /* buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buffer.h; sourceTree = "<group>"; };
+		29C28DC92070A5EF002C19F7 /* cmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmark.h; sourceTree = "<group>"; };
+		29C28DCA2070A5EF002C19F7 /* strikethrough.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = strikethrough.h; sourceTree = "<group>"; };
+		29C28DCB2070A5EF002C19F7 /* cmark_extension_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cmark_extension_api.h; sourceTree = "<group>"; };
+		29C28DCC2070A5EF002C19F7 /* syntax_extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = syntax_extension.h; sourceTree = "<group>"; };
+		29C28DCD2070A5EF002C19F7 /* inlines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inlines.h; sourceTree = "<group>"; };
+		29C28DCE2070A5EF002C19F7 /* table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = table.h; sourceTree = "<group>"; };
+		29C28DCF2070A5EF002C19F7 /* tagfilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tagfilter.h; sourceTree = "<group>"; };
+		29C28DD02070A5EF002C19F7 /* ext_scanners.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ext_scanners.h; sourceTree = "<group>"; };
+		29C28DD12070A5EF002C19F7 /* houdini.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = houdini.h; sourceTree = "<group>"; };
+		29C28DD22070A5EF002C19F7 /* iterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iterator.h; sourceTree = "<group>"; };
+		29C28DD32070A5EF002C19F7 /* utf8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utf8.h; sourceTree = "<group>"; };
+		29C28DD42070A5EF002C19F7 /* references.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = references.h; sourceTree = "<group>"; };
+		29C28DD52070A5EF002C19F7 /* render.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = render.h; sourceTree = "<group>"; };
+		29C28DD62070A5EF002C19F7 /* plaintext.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plaintext.c; sourceTree = "<group>"; };
+		29C28DD72070A5EF002C19F7 /* utf8.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utf8.c; sourceTree = "<group>"; };
+		29C28DD82070A5EF002C19F7 /* references.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = references.c; sourceTree = "<group>"; };
+		29C28DD92070A5EF002C19F7 /* render.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = render.c; sourceTree = "<group>"; };
+		29C28DDA2070A5EF002C19F7 /* iterator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = iterator.c; sourceTree = "<group>"; };
+		29C28DDB2070A5EF002C19F7 /* arena.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = arena.c; sourceTree = "<group>"; };
+		29C28DDC2070A5EF002C19F7 /* linked_list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = linked_list.c; sourceTree = "<group>"; };
+		29C28DDD2070A5EF002C19F7 /* commonmark.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = commonmark.c; sourceTree = "<group>"; };
+		29C28DDE2070A5EF002C19F7 /* map.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = map.c; sourceTree = "<group>"; };
+		29C28DDF2070A5EF002C19F7 /* html.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = html.c; sourceTree = "<group>"; };
+		29C28DE02070A5EF002C19F7 /* plugin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plugin.c; sourceTree = "<group>"; };
+		29C28DE12070A5EF002C19F7 /* scanners.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = scanners.c; sourceTree = "<group>"; };
+		29C28DE22070A5EF002C19F7 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		29C28DE32070A5EF002C19F7 /* footnotes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = footnotes.c; sourceTree = "<group>"; };
+		29C28DE42070A5EF002C19F7 /* houdini_html_u.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = houdini_html_u.c; sourceTree = "<group>"; };
+		29C28DE52070A5EF002C19F7 /* registry.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = registry.c; sourceTree = "<group>"; };
+		29C28DE62070A5EF002C19F7 /* node.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = node.c; sourceTree = "<group>"; };
+		29C28DE72070A5EF002C19F7 /* core-extensions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "core-extensions.c"; sourceTree = "<group>"; };
+		29C28E2B2070A6B1002C19F7 /* checkbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = checkbox.h; sourceTree = "<group>"; };
+		29C28E2C2070A6B2002C19F7 /* mention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mention.h; sourceTree = "<group>"; };
+		29C28E2F2070A6B9002C19F7 /* mention.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mention.c; sourceTree = "<group>"; };
+		29C28E302070A6B9002C19F7 /* checkbox.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = checkbox.c; sourceTree = "<group>"; };
+		29C28E372070A6F4002C19F7 /* cmark_gfm_swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cmark_gfm_swiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		29C28E3B2070A6F4002C19F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29C28E422070A70F002C19F7 /* Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2911C55D2070879600732441 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29C28E342070A6F4002C19F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29C28E3C2070A6F4002C19F7 /* cmark_gfm_swift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2911C5572070879600732441 = {
+			isa = PBXGroup;
+			children = (
+				29C286D5207087CF002C19F7 /* Source */,
+				29C28E382070A6F4002C19F7 /* cmark_gfm_swiftTests */,
+				2911C5622070879600732441 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2911C5622070879600732441 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2911C5612070879600732441 /* cmark_gfm_swift.framework */,
+				29C28E372070A6F4002C19F7 /* cmark_gfm_swiftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29C286D5207087CF002C19F7 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				29C28DA22070A5EF002C19F7 /* cmark_gfm */,
+				2911C5652070879600732441 /* Info.plist */,
+				29C286D6207087CF002C19F7 /* ListElement.swift */,
+				29C286D7207087CF002C19F7 /* TextElement.swift */,
+				29C286D8207087CF002C19F7 /* Block+TableRow.swift */,
+				29C286D9207087CF002C19F7 /* TableRow.swift */,
+				29C286DA207087CF002C19F7 /* Element.swift */,
+				29C286DB207087CF002C19F7 /* ASTOperations.swift */,
+				29C286E4207087CF002C19F7 /* Node+Elements.swift */,
+				29C286E5207087CF002C19F7 /* cmark-gfm-swift.h */,
+				29C286E6207087CF002C19F7 /* Inline+TextElement.swift */,
+				29C286E7207087CF002C19F7 /* Block+ListElement.swift */,
+				29C286E8207087CF002C19F7 /* Block+TextElement.swift */,
+				29C286E9207087CF002C19F7 /* Node.swift */,
+				29C286EA207087CF002C19F7 /* SwiftAST.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		29C28DA22070A5EF002C19F7 /* cmark_gfm */ = {
+			isa = PBXGroup;
+			children = (
+				29C28DDB2070A5EF002C19F7 /* arena.c */,
+				29C28DA92070A5EF002C19F7 /* autolink.c */,
+				29C28DAA2070A5EF002C19F7 /* blocks.c */,
+				29C28DA82070A5EF002C19F7 /* buffer.c */,
+				29C28DB12070A5EF002C19F7 /* case_fold_switch.inc */,
+				29C28E302070A6B9002C19F7 /* checkbox.c */,
+				29C28DAB2070A5EF002C19F7 /* cmark_ctype.c */,
+				29C28DA52070A5EF002C19F7 /* cmark.c */,
+				29C28DDD2070A5EF002C19F7 /* commonmark.c */,
+				29C28DE72070A5EF002C19F7 /* core-extensions.c */,
+				29C28DB22070A5EF002C19F7 /* entities.inc */,
+				29C28DB32070A5EF002C19F7 /* ext_scanners.c */,
+				29C28DE32070A5EF002C19F7 /* footnotes.c */,
+				29C28DAF2070A5EF002C19F7 /* houdini_href_e.c */,
+				29C28DB52070A5EF002C19F7 /* houdini_html_e.c */,
+				29C28DE42070A5EF002C19F7 /* houdini_html_u.c */,
+				29C28DDF2070A5EF002C19F7 /* html.c */,
+				29C28DB62070A5EF002C19F7 /* include */,
+				29C28DAD2070A5EF002C19F7 /* inlines.c */,
+				29C28DDA2070A5EF002C19F7 /* iterator.c */,
+				29C28DAE2070A5EF002C19F7 /* latex.c */,
+				29C28DDC2070A5EF002C19F7 /* linked_list.c */,
+				29C28DA72070A5EF002C19F7 /* man.c */,
+				29C28DDE2070A5EF002C19F7 /* map.c */,
+				29C28E2F2070A6B9002C19F7 /* mention.c */,
+				29C28DE22070A5EF002C19F7 /* module.modulemap */,
+				29C28DE62070A5EF002C19F7 /* node.c */,
+				29C28DD62070A5EF002C19F7 /* plaintext.c */,
+				29C28DE02070A5EF002C19F7 /* plugin.c */,
+				29C28DD82070A5EF002C19F7 /* references.c */,
+				29C28DE52070A5EF002C19F7 /* registry.c */,
+				29C28DD92070A5EF002C19F7 /* render.c */,
+				29C28DE12070A5EF002C19F7 /* scanners.c */,
+				29C28DA62070A5EF002C19F7 /* scanners.re */,
+				29C28DA42070A5EF002C19F7 /* strikethrough.c */,
+				29C28DB02070A5EF002C19F7 /* syntax_extension.c */,
+				29C28DAC2070A5EF002C19F7 /* table.c */,
+				29C28DB42070A5EF002C19F7 /* tagfilter.c */,
+				29C28DD72070A5EF002C19F7 /* utf8.c */,
+				29C28DA32070A5EF002C19F7 /* xml.c */,
+			);
+			path = cmark_gfm;
+			sourceTree = "<group>";
+		};
+		29C28DB62070A5EF002C19F7 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				29C28DC62070A5EF002C19F7 /* autolink.h */,
+				29C28DC82070A5EF002C19F7 /* buffer.h */,
+				29C28E2B2070A6B1002C19F7 /* checkbox.h */,
+				29C28DBD2070A5EF002C19F7 /* chunk.h */,
+				29C28DC72070A5EF002C19F7 /* cmark_ctype.h */,
+				29C28DB82070A5EF002C19F7 /* cmark_export.h */,
+				29C28DCB2070A5EF002C19F7 /* cmark_extension_api.h */,
+				29C28DC52070A5EF002C19F7 /* cmark_version.h */,
+				29C28DC92070A5EF002C19F7 /* cmark.h */,
+				29C28DB72070A5EF002C19F7 /* cmarkextensions_export.h */,
+				29C28DBC2070A5EF002C19F7 /* config.h */,
+				29C28DC32070A5EF002C19F7 /* core-extensions.h */,
+				29C28DD02070A5EF002C19F7 /* ext_scanners.h */,
+				29C28DBE2070A5EF002C19F7 /* footnotes.h */,
+				29C28DD12070A5EF002C19F7 /* houdini.h */,
+				29C28DB92070A5EF002C19F7 /* html.h */,
+				29C28DCD2070A5EF002C19F7 /* inlines.h */,
+				29C28DD22070A5EF002C19F7 /* iterator.h */,
+				29C28DC12070A5EF002C19F7 /* libcmark_gfm.h */,
+				29C28DBB2070A5EF002C19F7 /* map.h */,
+				29C28E2C2070A6B2002C19F7 /* mention.h */,
+				29C28DC22070A5EF002C19F7 /* node.h */,
+				29C28DBF2070A5EF002C19F7 /* parser.h */,
+				29C28DBA2070A5EF002C19F7 /* plugin.h */,
+				29C28DD42070A5EF002C19F7 /* references.h */,
+				29C28DC42070A5EF002C19F7 /* registry.h */,
+				29C28DD52070A5EF002C19F7 /* render.h */,
+				29C28DC02070A5EF002C19F7 /* scanners.h */,
+				29C28DCA2070A5EF002C19F7 /* strikethrough.h */,
+				29C28DCC2070A5EF002C19F7 /* syntax_extension.h */,
+				29C28DCE2070A5EF002C19F7 /* table.h */,
+				29C28DCF2070A5EF002C19F7 /* tagfilter.h */,
+				29C28DD32070A5EF002C19F7 /* utf8.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		29C28E382070A6F4002C19F7 /* cmark_gfm_swiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				29C28E422070A70F002C19F7 /* Tests.swift */,
+				29C28E3B2070A6F4002C19F7 /* Info.plist */,
+			);
+			path = cmark_gfm_swiftTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2911C55E2070879600732441 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29C28E062070A5EF002C19F7 /* node.h in Headers */,
+				29C28DFE2070A5EF002C19F7 /* plugin.h in Headers */,
+				29C28DFC2070A5EF002C19F7 /* cmark_export.h in Headers */,
+				29C28E132070A5EF002C19F7 /* tagfilter.h in Headers */,
+				29C28E102070A5EF002C19F7 /* syntax_extension.h in Headers */,
+				29C28E0D2070A5EF002C19F7 /* cmark.h in Headers */,
+				29C28E0F2070A5EF002C19F7 /* cmark_extension_api.h in Headers */,
+				29C28E142070A5EF002C19F7 /* ext_scanners.h in Headers */,
+				29C28E052070A5EF002C19F7 /* libcmark_gfm.h in Headers */,
+				29C28E2D2070A6B2002C19F7 /* checkbox.h in Headers */,
+				29C28DFD2070A5EF002C19F7 /* html.h in Headers */,
+				29C28E032070A5EF002C19F7 /* parser.h in Headers */,
+				29C28DFF2070A5EF002C19F7 /* map.h in Headers */,
+				29C286F8207087CF002C19F7 /* cmark-gfm-swift.h in Headers */,
+				29C28E092070A5EF002C19F7 /* cmark_version.h in Headers */,
+				29C28DFB2070A5EF002C19F7 /* cmarkextensions_export.h in Headers */,
+				29C28E082070A5EF002C19F7 /* registry.h in Headers */,
+				29C28E072070A5EF002C19F7 /* core-extensions.h in Headers */,
+				29C28E122070A5EF002C19F7 /* table.h in Headers */,
+				29C28E012070A5EF002C19F7 /* chunk.h in Headers */,
+				29C28E002070A5EF002C19F7 /* config.h in Headers */,
+				29C28E182070A5EF002C19F7 /* references.h in Headers */,
+				29C28E112070A5EF002C19F7 /* inlines.h in Headers */,
+				29C28E2E2070A6B2002C19F7 /* mention.h in Headers */,
+				29C28E022070A5EF002C19F7 /* footnotes.h in Headers */,
+				29C28E0E2070A5EF002C19F7 /* strikethrough.h in Headers */,
+				29C28E0B2070A5EF002C19F7 /* cmark_ctype.h in Headers */,
+				29C28E042070A5EF002C19F7 /* scanners.h in Headers */,
+				29C28E172070A5EF002C19F7 /* utf8.h in Headers */,
+				29C28E162070A5EF002C19F7 /* iterator.h in Headers */,
+				29C28E0A2070A5EF002C19F7 /* autolink.h in Headers */,
+				29C28E0C2070A5EF002C19F7 /* buffer.h in Headers */,
+				29C28E192070A5EF002C19F7 /* render.h in Headers */,
+				29C28E152070A5EF002C19F7 /* houdini.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2911C5602070879600732441 /* cmark-gfm-swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2911C5692070879600732441 /* Build configuration list for PBXNativeTarget "cmark-gfm-swift" */;
+			buildPhases = (
+				2911C55C2070879600732441 /* Sources */,
+				2911C55D2070879600732441 /* Frameworks */,
+				2911C55E2070879600732441 /* Headers */,
+				2911C55F2070879600732441 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "cmark-gfm-swift";
+			productName = "cmark-gfm-swift";
+			productReference = 2911C5612070879600732441 /* cmark_gfm_swift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		29C28E362070A6F4002C19F7 /* cmark_gfm_swiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29C28E3F2070A6F4002C19F7 /* Build configuration list for PBXNativeTarget "cmark_gfm_swiftTests" */;
+			buildPhases = (
+				29C28E332070A6F4002C19F7 /* Sources */,
+				29C28E342070A6F4002C19F7 /* Frameworks */,
+				29C28E352070A6F4002C19F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				29C28E3E2070A6F4002C19F7 /* PBXTargetDependency */,
+			);
+			name = cmark_gfm_swiftTests;
+			productName = cmark_gfm_swiftTests;
+			productReference = 29C28E372070A6F4002C19F7 /* cmark_gfm_swiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2911C5582070879600732441 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Ryan Nystrom";
+				TargetAttributes = {
+					2911C5602070879600732441 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					29C28E362070A6F4002C19F7 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 2911C55B2070879600732441 /* Build configuration list for PBXProject "cmark-gfm-swift" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2911C5572070879600732441;
+			productRefGroup = 2911C5622070879600732441 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2911C5602070879600732441 /* cmark-gfm-swift */,
+				29C28E362070A6F4002C19F7 /* cmark_gfm_swiftTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2911C55F2070879600732441 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29C28DEB2070A5EF002C19F7 /* scanners.re in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29C28E352070A6F4002C19F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2911C55C2070879600732441 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29C28DF82070A5EF002C19F7 /* ext_scanners.c in Sources */,
+				29C28DE82070A5EF002C19F7 /* xml.c in Sources */,
+				29C286EB207087CF002C19F7 /* ListElement.swift in Sources */,
+				29C28E1F2070A5EF002C19F7 /* arena.c in Sources */,
+				29C28DEE2070A5EF002C19F7 /* autolink.c in Sources */,
+				29C28DF32070A5EF002C19F7 /* latex.c in Sources */,
+				29C28DEC2070A5EF002C19F7 /* man.c in Sources */,
+				29C28E1C2070A5EF002C19F7 /* references.c in Sources */,
+				29C28DF02070A5EF002C19F7 /* cmark_ctype.c in Sources */,
+				29C286F7207087CF002C19F7 /* Node+Elements.swift in Sources */,
+				29C28E252070A5EF002C19F7 /* scanners.c in Sources */,
+				29C28E292070A5EF002C19F7 /* node.c in Sources */,
+				29C28DF22070A5EF002C19F7 /* inlines.c in Sources */,
+				29C28E202070A5EF002C19F7 /* linked_list.c in Sources */,
+				29C28DED2070A5EF002C19F7 /* buffer.c in Sources */,
+				29C28E282070A5EF002C19F7 /* registry.c in Sources */,
+				29C28E212070A5EF002C19F7 /* commonmark.c in Sources */,
+				29C28E242070A5EF002C19F7 /* plugin.c in Sources */,
+				29C28DEA2070A5EF002C19F7 /* cmark.c in Sources */,
+				29C28DFA2070A5EF002C19F7 /* houdini_html_e.c in Sources */,
+				29C286EE207087CF002C19F7 /* TableRow.swift in Sources */,
+				29C28DF92070A5EF002C19F7 /* tagfilter.c in Sources */,
+				29C28E1D2070A5EF002C19F7 /* render.c in Sources */,
+				29C28E272070A5EF002C19F7 /* houdini_html_u.c in Sources */,
+				29C28DF12070A5EF002C19F7 /* table.c in Sources */,
+				29C28E232070A5EF002C19F7 /* html.c in Sources */,
+				29C28DF72070A5EF002C19F7 /* entities.inc in Sources */,
+				29C286FB207087CF002C19F7 /* Block+TextElement.swift in Sources */,
+				29C28DF62070A5EF002C19F7 /* case_fold_switch.inc in Sources */,
+				29C286F9207087CF002C19F7 /* Inline+TextElement.swift in Sources */,
+				29C286ED207087CF002C19F7 /* Block+TableRow.swift in Sources */,
+				29C28E1E2070A5EF002C19F7 /* iterator.c in Sources */,
+				29C286EC207087CF002C19F7 /* TextElement.swift in Sources */,
+				29C28E222070A5EF002C19F7 /* map.c in Sources */,
+				29C28DF52070A5EF002C19F7 /* syntax_extension.c in Sources */,
+				29C286F0207087CF002C19F7 /* ASTOperations.swift in Sources */,
+				29C28E312070A6B9002C19F7 /* mention.c in Sources */,
+				29C28DF42070A5EF002C19F7 /* houdini_href_e.c in Sources */,
+				29C286EF207087CF002C19F7 /* Element.swift in Sources */,
+				29C286FD207087CF002C19F7 /* SwiftAST.swift in Sources */,
+				29C28E1A2070A5EF002C19F7 /* plaintext.c in Sources */,
+				29C286FA207087CF002C19F7 /* Block+ListElement.swift in Sources */,
+				29C28DEF2070A5EF002C19F7 /* blocks.c in Sources */,
+				29C28E2A2070A5EF002C19F7 /* core-extensions.c in Sources */,
+				29C286FC207087CF002C19F7 /* Node.swift in Sources */,
+				29C28E322070A6B9002C19F7 /* checkbox.c in Sources */,
+				29C28E262070A5EF002C19F7 /* footnotes.c in Sources */,
+				29C28E1B2070A5EF002C19F7 /* utf8.c in Sources */,
+				29C28DE92070A5EF002C19F7 /* strikethrough.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		29C28E332070A6F4002C19F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29C28E432070A70F002C19F7 /* Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		29C28E3E2070A6F4002C19F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2911C5602070879600732441 /* cmark-gfm-swift */;
+			targetProxy = 29C28E3D2070A6F4002C19F7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2911C5672070879600732441 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2911C5682070879600732441 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2911C56A2070879600732441 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 523C4DWBTH;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Source/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.whoisryannystrom.cmark-gfm-swift";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Source/cmark_gfm";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2911C56B2070879600732441 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 523C4DWBTH;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Source/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.whoisryannystrom.cmark-gfm-swift";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Source/cmark_gfm";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		29C28E402070A6F4002C19F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 523C4DWBTH;
+				INFOPLIST_FILE = cmark_gfm_swiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.whoisryannystrom.cmark-gfm-swiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		29C28E412070A6F4002C19F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 523C4DWBTH;
+				INFOPLIST_FILE = cmark_gfm_swiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.whoisryannystrom.cmark-gfm-swiftTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2911C55B2070879600732441 /* Build configuration list for PBXProject "cmark-gfm-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2911C5672070879600732441 /* Debug */,
+				2911C5682070879600732441 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2911C5692070879600732441 /* Build configuration list for PBXNativeTarget "cmark-gfm-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2911C56A2070879600732441 /* Debug */,
+				2911C56B2070879600732441 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29C28E3F2070A6F4002C19F7 /* Build configuration list for PBXNativeTarget "cmark_gfm_swiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29C28E402070A6F4002C19F7 /* Debug */,
+				29C28E412070A6F4002C19F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2911C5582070879600732441 /* Project object */;
+}

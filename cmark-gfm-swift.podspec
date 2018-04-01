@@ -19,6 +19,9 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'cmark-gfm-swift/Classes/**/*'
+  s.public_header_files = 'cmark-gfm-swift/Classes/*.h'
+  s.preserve_path = 'cmark-gfm-swift/Classes/extensions/module.modulemap'
+  s.pod_target_xcconfig = { 'SWIFT_INCLUDE_PATHS' => '$(SRCROOT)/cmark-gfm-swift/cmark-gfm-swift/Classes/extensions/**' }
   
   s.dependency 'libcmark_gfm'
 

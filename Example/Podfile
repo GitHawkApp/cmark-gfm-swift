@@ -1,6 +1,0 @@
-use_frameworks!
-target 'cmark-gfm-swift_Tests' do
-  pod 'cmark-gfm-swift', :path => '../'
-  
-  
-end
