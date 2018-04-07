@@ -276,4 +276,16 @@ class Tests: XCTestCase {
         XCTAssertEqual(cells[1].string, "bim")
     }
 
+    func testEmailNotAMention() {
+        let markdown = "me@google"
+        let node = Node(markdown: markdown)!
+        XCTAssertEqual(node.elements.count, 1)
+
+        guard case .paragraph(let paragraph)? = node.elements.first else { fatalError() }
+        XCTAssertEqual(paragraph.count, 1)
+
+        guard case .text(let text)? = paragraph.first else { fatalError() }
+        XCTAssertEqual(text, "me@google")
+    }
+
 }
