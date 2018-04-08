@@ -288,4 +288,16 @@ class Tests: XCTestCase {
         XCTAssertEqual(text, "me@google")
     }
 
+    func testHTML_withGitHawkSignature() {
+        let markdown = "<sub>Sent with <a href=\"githawk.com\">GitHawk</a></sub>"
+        let node = Node(markdown: markdown)!
+        XCTAssertEqual(node.elements.count, 1)
+
+        guard case .paragraph(let paragraph)? = node.elements.first else { fatalError() }
+        XCTAssertEqual(paragraph.count, 6)
+
+        let elements = node.flatElements
+        XCTAssertEqual(elements.count, 1)
+    }
+
 }
