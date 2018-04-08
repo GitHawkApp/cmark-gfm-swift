@@ -27,7 +27,7 @@ extension Block {
         case .html(let text):
             return [.html(text: text)]
         case .list(let items, let type):
-            return [.list(items: items.flatMap { $0.listElements(0) }, type: type)]
+            return [.list(items: items.compactMap { $0.listElements(0) }, type: type)]
         case .paragraph(let text):
             let builder = InlineBuilder(options: options)
             text.forEach { $0.fold(builder: builder) }
@@ -38,7 +38,7 @@ extension Block {
             }
             return els
         case .table(let items):
-            return [.table(rows: items.flatMap { $0.tableRow })]
+            return [.table(rows: items.compactMap { $0.tableRow })]
         case .tableHeader, .tableRow, .tableCell:
             return [] // handled in flattening .table
         case .thematicBreak:
