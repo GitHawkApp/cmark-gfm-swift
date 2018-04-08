@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import cmark_gfm
 
 struct FoldingOptions {
     var quoteLevel: Int
@@ -70,7 +71,7 @@ class InlineBuilder {
 }
 
 extension Inline {
-    /// Collapse all text elements, break by image and html elements
+    /// Collapse all text elements, break by image elements
     func fold(builder: InlineBuilder) {
         switch self {
         case .text, .softBreak, .lineBreak, .code, .emphasis, .strong,
@@ -82,16 +83,40 @@ extension Inline {
             if let title = title, let url = url {
                 builder.pushNonText(.image(title: title, url: url))
             }
-        case .html(let text):
-            builder.pushNonText(.html(text: text))
+        case .html:
+            // handled by converting blocks containing html into full html elements
+            break
         }
+    }
+}
+
+private extension Node {
+    var containsHTML: Bool {
+        if type == CMARK_NODE_HTML_BLOCK || type == CMARK_NODE_HTML_INLINE {
+            return true
+        }
+        for child in children {
+            if child.containsHTML { return true }
+        }
+        return false
     }
 }
 
 public extension Node {
 
     var flatElements: [Element] {
-        return elements.flatMap { $0.folded(FoldingOptions(quoteLevel: 0)) }
+        let options = FoldingOptions(quoteLevel: 0)
+        return children.reduce([Element]()) {
+            if $1.containsHTML {
+                return $0 + [.html(text: $1.html)]
+            } else {
+                if let block = Block($1) {
+                    return $0 + block.folded(options)
+                } else {
+                    return $0
+                }
+            }
+        }
     }
 
 }
