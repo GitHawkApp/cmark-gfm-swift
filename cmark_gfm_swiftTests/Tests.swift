@@ -392,5 +392,27 @@ class Tests: XCTestCase {
         XCTAssertEqual(elements.count, 1)
     }
 
+    func testRenderHTML_withMention() {
+        let markdown = "Mentioning @user bla bla"
+        let html = Node(markdown: markdown)!.html
+        XCTAssertEqual(html, "<p>Mentioning <a href=\"https://github.com/user\">@user</a> bla bla</p>\n")
+    }
+
+    func testRenderHTML_withCheckbox() {
+        let markdown = """
+            - [ ] One
+            - [x] Two
+            """
+        let html = Node(markdown: markdown)!.html
+        let expected = """
+            <ul>
+            <li><input type="checkbox" /> One</li>
+            <li><input type="checkbox" checked /> Two</li>
+            </ul>
+
+            """
+        XCTAssertEqual(html, expected)
+    }
+
 }
 
