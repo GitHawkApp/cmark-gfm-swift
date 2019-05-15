@@ -40,41 +40,39 @@ extension String {
 /// Can represent a full Markdown document (i.e. the document's root node) or
 /// just some part of a document.
 public class Node: CustomStringConvertible {
+    
+    public enum Option: String {
+        
+        case autolink, checkbox, mention, strikethrough, table
+    }
+    
     let node: UnsafeMutablePointer<cmark_node>
     
     init(node: UnsafeMutablePointer<cmark_node>) {
         self.node = node
     }
 
-    public init?(markdown: String) {
+    public init?(markdown: String, options: [Option]) {
         core_extensions_ensure_registered()
-
+        
         guard let parser = cmark_parser_new(0) else { return nil }
         defer { cmark_parser_free(parser) }
-
-        if let ext = cmark_find_syntax_extension("table") {
-            cmark_parser_attach_syntax_extension(parser, ext)
+        
+        options.forEach {
+            if let ext = cmark_find_syntax_extension($0.rawValue) {
+                cmark_parser_attach_syntax_extension(parser, ext)
+            }
         }
-
-        if let ext = cmark_find_syntax_extension("autolink") {
-            cmark_parser_attach_syntax_extension(parser, ext)
-        }
-
-        if let ext = cmark_find_syntax_extension("strikethrough") {
-            cmark_parser_attach_syntax_extension(parser, ext)
-        }
-
-        if let ext = cmark_find_syntax_extension("mention") {
-            cmark_parser_attach_syntax_extension(parser, ext)
-        }
-
-        if let ext = cmark_find_syntax_extension("checkbox") {
-            cmark_parser_attach_syntax_extension(parser, ext)
-        }
-
+        
         cmark_parser_feed(parser, markdown, markdown.utf8.count)
         guard let node = cmark_parser_finish(parser) else { return nil }
         self.node = node
+    }
+    
+    public convenience init?(markdown: String) {
+        
+        let allOptions: [Option] = [.autolink, .checkbox, .mention, .strikethrough, .table]
+        self.init(markdown: markdown, options: allOptions)
     }
     
     deinit {
