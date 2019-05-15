@@ -41,7 +41,7 @@ extension String {
 /// just some part of a document.
 public class Node: CustomStringConvertible {
     
-    public enum Option: String {
+    public enum Option: String, CaseIterable {
         
         case autolink, checkbox, mention, strikethrough, table
     }
@@ -58,11 +58,9 @@ public class Node: CustomStringConvertible {
         guard let parser = cmark_parser_new(0) else { return nil }
         defer { cmark_parser_free(parser) }
         
-        options.forEach {
-            if let ext = cmark_find_syntax_extension($0.rawValue) {
-                cmark_parser_attach_syntax_extension(parser, ext)
-            }
-        }
+        options
+            .compactMap { cmark_find_syntax_extension($0.rawValue) }
+            .forEach { cmark_parser_attach_syntax_extension(parser, $0) }
         
         cmark_parser_feed(parser, markdown, markdown.utf8.count)
         guard let node = cmark_parser_finish(parser) else { return nil }
@@ -71,8 +69,7 @@ public class Node: CustomStringConvertible {
     
     public convenience init?(markdown: String) {
         
-        let allOptions: [Option] = [.autolink, .checkbox, .mention, .strikethrough, .table]
-        self.init(markdown: markdown, options: allOptions)
+        self.init(markdown: markdown, options: Option.allCases)
     }
     
     deinit {
