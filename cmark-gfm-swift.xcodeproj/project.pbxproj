@@ -34,8 +34,6 @@
 		29C28DF32070A5EF002C19F7 /* latex.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DAE2070A5EF002C19F7 /* latex.c */; };
 		29C28DF42070A5EF002C19F7 /* houdini_href_e.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DAF2070A5EF002C19F7 /* houdini_href_e.c */; };
 		29C28DF52070A5EF002C19F7 /* syntax_extension.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DB02070A5EF002C19F7 /* syntax_extension.c */; };
-		29C28DF62070A5EF002C19F7 /* case_fold_switch.inc in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DB12070A5EF002C19F7 /* case_fold_switch.inc */; };
-		29C28DF72070A5EF002C19F7 /* entities.inc in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DB22070A5EF002C19F7 /* entities.inc */; };
 		29C28DF82070A5EF002C19F7 /* ext_scanners.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DB32070A5EF002C19F7 /* ext_scanners.c */; };
 		29C28DF92070A5EF002C19F7 /* tagfilter.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DB42070A5EF002C19F7 /* tagfilter.c */; };
 		29C28DFA2070A5EF002C19F7 /* houdini_html_e.c in Sources */ = {isa = PBXBuildFile; fileRef = 29C28DB52070A5EF002C19F7 /* houdini_html_e.c */; };
@@ -525,9 +523,7 @@
 				29C28E272070A5EF002C19F7 /* houdini_html_u.c in Sources */,
 				29C28DF12070A5EF002C19F7 /* table.c in Sources */,
 				29C28E232070A5EF002C19F7 /* html.c in Sources */,
-				29C28DF72070A5EF002C19F7 /* entities.inc in Sources */,
 				29C286FB207087CF002C19F7 /* Block+TextElement.swift in Sources */,
-				29C28DF62070A5EF002C19F7 /* case_fold_switch.inc in Sources */,
 				29C286F9207087CF002C19F7 /* Inline+TextElement.swift in Sources */,
 				29C286ED207087CF002C19F7 /* Block+TableRow.swift in Sources */,
 				29C28E1E2070A5EF002C19F7 /* iterator.c in Sources */,
