@@ -19,10 +19,10 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
   s.osx.deployment_target = '10.10'
 
-  s.source_files = 'Source/**/*.swift', 'Source/**/*.c', 'Source/**/*.h'
+  s.source_files = 'Source/**/*.swift', 'Source/**/*.c', 'Source/**/*.h', 'Source/**/*.inc'
   s.public_header_files = 'Source/*.h'
   s.exclude_files = "Source/Info.plist"
-  s.preserve_path = 'Source/cmark_gfm/module.modulemap'
+  s.preserve_paths = 'Source/cmark_gfm/module.modulemap', 'Source/cmark_gfm/scanners.re'
   s.pod_target_xcconfig = { 'SWIFT_INCLUDE_PATHS' => '$(SRCROOT)/cmark-gfm-swift/Source/cmark_gfm/**' }
 
 end
