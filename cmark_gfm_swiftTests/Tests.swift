@@ -84,7 +84,7 @@ class Tests: XCTestCase {
         let blocks = rootNode.elements
         XCTAssertEqual(blocks.count, 1)
     }
-
+    
     func testMarkdownCodeBlock() {
         let markdown = """
             ```swift
@@ -368,6 +368,27 @@ class Tests: XCTestCase {
         XCTAssertEqual(cells[1].string, "bim")
     }
 
+    func testFootnotes() {
+        let markdown = """
+            Lorem ipsum[^1]
+            [^1]: Test footnote
+            """
+        let html = Node(markdown: markdown)!.html
+        let expected = """
+            <p>Lorem ipsum<sup class="footnote-ref"><a href="#fn1" id="fnref1">1</a></sup></p>
+            <section class="footnotes">
+            <ol>
+            <li id="fn1">
+            <p>Test footnote <a href="#fnref1" class="footnote-backref">↩</a></p>
+            </li>
+            </ol>
+            </section>
+
+            """
+        XCTAssertEqual(html, expected)
+        
+    }
+    
     func testEmailNotAMention() {
         let markdown = "me@google"
         let node = Node(markdown: markdown)!
